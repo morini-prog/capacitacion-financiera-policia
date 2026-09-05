@@ -663,6 +663,7 @@ document.addEventListener('DOMContentLoaded', () => {
       closeClueModal();
       closeConceptsModal();
       closeResetModal();
+      closeAllResourceModals();
     }
   });
 
@@ -677,17 +678,60 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
-  // 11. ACORDEONES DE RECURSOS (EXCLUSIVIDAD)
+  // 11. VENTANAS MODALES DE RECURSOS (POR NECESIDAD)
   // ==========================================
-  const resourceAccordions = document.querySelectorAll('.resource-accordion-item');
-  resourceAccordions.forEach(item => {
-    item.addEventListener('toggle', () => {
-      if (item.open) {
-        resourceAccordions.forEach(otherItem => {
-          if (otherItem !== item && otherItem.open) {
-            otherItem.open = false;
-          }
-        });
+  const resourceModals = document.querySelectorAll('.modal-resource-backdrop');
+
+  function openResourceModal(modalId) {
+    const targetModal = document.getElementById(modalId);
+    if (targetModal) {
+      targetModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      const closeBtn = targetModal.querySelector('.btn-close-modal') || targetModal.querySelector('[data-close-modal]');
+      if (closeBtn) closeBtn.focus();
+    }
+  }
+
+  function closeAllResourceModals() {
+    resourceModals.forEach(modal => {
+      modal.style.display = 'none';
+    });
+    document.body.style.overflow = '';
+  }
+
+  // Apertura de modales desde los 6 botones de la cuadrícula
+  document.querySelectorAll('[data-open-modal]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-open-modal');
+      if (targetId) {
+        openResourceModal(targetId);
+      }
+    });
+  });
+
+  // Cierre desde botones con [data-close-modal] dentro de los modales de recursos
+  document.querySelectorAll('.modal-resource-backdrop [data-close-modal]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const parentModal = btn.closest('.modal-resource-backdrop');
+      if (parentModal) {
+        parentModal.style.display = 'none';
+        const anyOpen = Array.from(resourceModals).some(m => m.style.display === 'flex');
+        if (!anyOpen) {
+          document.body.style.overflow = '';
+        }
+      }
+    });
+  });
+
+  // Cierre al hacer clic en el backdrop
+  resourceModals.forEach(backdrop => {
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) {
+        backdrop.style.display = 'none';
+        const anyOpen = Array.from(resourceModals).some(m => m.style.display === 'flex');
+        if (!anyOpen) {
+          document.body.style.overflow = '';
+        }
       }
     });
   });

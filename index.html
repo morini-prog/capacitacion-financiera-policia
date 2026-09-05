@@ -661,455 +661,81 @@
 
     </main>
 
-    <!-- ================= PIE DE PÁGINA: RECURSOS POR NECESIDAD ================= -->
+    <!-- ================= PIE DE PÁGINA: RECURSOS POR NECESIDAD (BOTONES A VENTANAS) ================= -->
     <footer class="app-footer" id="seccionRecursos" aria-label="Recursos para informarse o pedir ayuda">
       <div class="footer-inner">
         <div class="footer-header-block">
-          <span class="footer-kicker">Guía de consulta y derivación</span>
+          <span class="footer-kicker">Guía de consulta y derivación post-taller</span>
           <h3 class="footer-title">RECURSOS PARA INFORMARSE O PEDIR AYUDA</h3>
           <p class="footer-intro-text">
-            Espacio organizado según la necesidad personal para consultar después del taller. Seleccionen cada categoría para desplegar la información y herramientas disponibles:
+            Espacio organizado según la necesidad personal para consultar después del taller. Seleccionen cualquiera de las siguientes opciones para abrir la ventana con la información correspondiente:
           </p>
         </div>
 
-        <!-- ACORDEÓN DE 6 NECESIDADES -->
-        <div class="resources-accordions-group">
+        <!-- 2 FILAS DE 3 BOTONES CADA UNA (6 NECESIDADES) -->
+        <div class="resources-buttons-grid">
 
-          <!-- 1. QUIERO APRENDER SOBRE FINANZAS -->
-          <details class="resource-accordion-item" id="acc-aprender" name="recursos-accordion">
-            <summary class="accordion-summary">
-              <div class="summary-title-wrapper">
-                <span class="category-badge info-badge">Información / Aprendizaje</span>
-                <span class="accordion-title-text">QUIERO APRENDER SOBRE FINANZAS</span>
-              </div>
-              <span class="accordion-icon-indicator" aria-hidden="true">
-                <svg class="chevron-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </span>
-            </summary>
-            <div class="accordion-content-panel">
-              <p class="accordion-intro-p">
-                Recursos gratuitos para comprender mejor presupuesto, ahorro, crédito, deuda, medios de pago y decisiones financieras.
-              </p>
+          <!-- Fila 1, Botón 1 -->
+          <button type="button" class="resource-nav-btn" data-open-modal="modalResourceAprender">
+            <span class="btn-category-badge badge-info">Información / Aprendizaje</span>
+            <span class="btn-main-title">QUIERO APRENDER SOBRE FINANZAS</span>
+            <span class="btn-action-label">
+              <span>Ver programas y cursos</span>
+              <svg class="arrow-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </button>
 
-              <div class="resource-cards-grid">
-                <!-- BCRA -->
-                <article class="resource-entry-card">
-                  <div class="entry-header">
-                    <span class="entry-entity">Banco Central de la República Argentina (BCRA)</span>
-                    <h4 class="entry-name">Programas y Materiales de Educación Financiera</h4>
-                  </div>
-                  <div class="entry-highlight-box">
-                    <strong>Destacado:</strong> Programa <em>“Finanzas Cerca”</em>, especialmente diseñado y adaptado para contemplar entre sus destinatarios al personal de fuerzas de seguridad.
-                  </div>
-                  <p class="entry-desc">
-                    Herramientas de formación ciudadana en finanzas, guías prácticas para usuarios y programas formativos oficiales.
-                  </p>
-                  <div class="entry-actions">
-                    <a href="https://www.bcra.gob.ar/programas-de-educacion-financiera/" target="_blank" rel="noopener noreferrer" class="btn-resource">
-                      <span>Ver Programas de Educación Financiera</span>
-                      <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
-                    <a href="https://www.bcra.gob.ar/herramientas-conocimientos/" target="_blank" rel="noopener noreferrer" class="btn-resource btn-resource-secondary">
-                      <span>Herramientas y Conocimientos BCRA</span>
-                      <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
-                  </div>
-                </article>
+          <!-- Fila 1, Botón 2 -->
+          <button type="button" class="resource-nav-btn" data-open-modal="modalResourceOrdenar">
+            <span class="btn-category-badge badge-info">Herramientas Prácticas</span>
+            <span class="btn-main-title">QUIERO ORDENAR MIS FINANZAS</span>
+            <span class="btn-action-label">
+              <span>Preguntas y guías oficiales</span>
+              <svg class="arrow-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </button>
 
-                <!-- Argentina.gob.ar -->
-                <article class="resource-entry-card">
-                  <div class="entry-header">
-                    <span class="entry-entity">Argentina.gob.ar</span>
-                    <h4 class="entry-name">Inclusión Financiera</h4>
-                  </div>
-                  <p class="entry-desc">
-                    Materiales explicativos sobre elaboración de presupuesto, ahorro, funcionamiento del sistema financiero, medios de pago y derechos de las personas usuarias.
-                  </p>
-                  <div class="entry-actions">
-                    <a href="https://www.argentina.gob.ar/economia/inclusion-financiera" target="_blank" rel="noopener noreferrer" class="btn-resource">
-                      <span>Acceder a Inclusión Financiera</span>
-                      <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
-                  </div>
-                </article>
+          <!-- Fila 1, Botón 3 -->
+          <button type="button" class="resource-nav-btn" data-open-modal="modalResourceEntender">
+            <span class="btn-category-badge badge-info">Análisis y Prevención</span>
+            <span class="btn-main-title">QUIERO ENTENDER LAS APUESTAS</span>
+            <span class="btn-action-label">
+              <span>Señales de riesgo y pautas</span>
+              <svg class="arrow-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </button>
 
-                <!-- Banco Nación -->
-                <article class="resource-entry-card">
-                  <div class="entry-header">
-                    <span class="entry-entity">Banco de la Nación Argentina</span>
-                    <h4 class="entry-name">BNA Te Suma — ABC Financiero</h4>
-                  </div>
-                  <p class="entry-desc">
-                    Recursos didácticos y contenidos organizados para el aprendizaje de finanzas personales, bancarización y administración cotidiana.
-                  </p>
-                  <div class="entry-actions">
-                    <a href="https://www.bna.com.ar/bnatesuma/" target="_blank" rel="noopener noreferrer" class="btn-resource">
-                      <span>Explorar BNA Te Suma</span>
-                      <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
-                  </div>
-                </article>
+          <!-- Fila 2, Botón 4 -->
+          <button type="button" class="resource-nav-btn" data-open-modal="modalResourceVideos">
+            <span class="btn-category-badge badge-info">Material Audiovisual</span>
+            <span class="btn-main-title">PREFIERO VER UN VIDEO</span>
+            <span class="btn-action-label">
+              <span>Videos formativos en YouTube</span>
+              <svg class="arrow-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </button>
 
-                <!-- BBVA -->
-                <article class="resource-entry-card">
-                  <div class="entry-header">
-                    <span class="entry-entity">BBVA Argentina</span>
-                    <h4 class="entry-name">Educación Financiera</h4>
-                  </div>
-                  <p class="entry-desc">
-                    Plataforma abierta y gratuita con módulos sobre presupuesto, hábitos de ahorro, gestión del endeudamiento, inversiones y productos bancarios.
-                  </p>
-                  <div class="entry-actions">
-                    <a href="https://edufin.bbva.com.ar/" target="_blank" rel="noopener noreferrer" class="btn-resource">
-                      <span>Plataforma BBVA EduFin</span>
-                      <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
-                  </div>
-                </article>
+          <!-- Fila 2, Botón 5 -->
+          <button type="button" class="resource-nav-btn btn-highlight-limit" data-open-modal="modalResourceLimite">
+            <span class="btn-category-badge badge-limit">Herramientas de Protección</span>
+            <span class="btn-main-title">NECESITO PONER UN LÍMITE</span>
+            <span class="btn-action-label">
+              <span>Opciones de autoexclusión</span>
+              <svg class="arrow-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </button>
 
-                <!-- Finanzas a Mano -->
-                <article class="resource-entry-card">
-                  <div class="entry-header">
-                    <span class="entry-entity">Galicia + UBA + Eidos</span>
-                    <h4 class="entry-name">Finanzas a Mano</h4>
-                  </div>
-                  <p class="entry-desc">
-                    Curso virtual gratuito que permite profundizar en la toma de decisiones financieras, ahorro, inversión, manejo de dinero digital y prevención de estafas virtuales.
-                  </p>
-                  <div class="entry-actions">
-                    <a href="https://www.finanzasamano.galicia.ar/" target="_blank" rel="noopener noreferrer" class="btn-resource">
-                      <span>Conocer Curso Finanzas a Mano</span>
-                      <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
-                  </div>
-                </article>
+          <!-- Fila 2, Botón 6 -->
+          <button type="button" class="resource-nav-btn btn-highlight-help" data-open-modal="modalResourceAyuda">
+            <span class="btn-category-badge badge-help">Orientación y Asistencia</span>
+            <span class="btn-main-title">NECESITO AYUDA / ME PREOCUPA ALGUIEN</span>
+            <span class="btn-action-label">
+              <span>Líneas gratuitas 24 hs</span>
+              <svg class="arrow-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </button>
 
-                <!-- Santander -->
-                <article class="resource-entry-card">
-                  <div class="entry-header">
-                    <span class="entry-entity">Santander Argentina</span>
-                    <h4 class="entry-name">Educación Financiera y Prevención</h4>
-                  </div>
-                  <p class="entry-desc">
-                    Contenidos formativos sobre administración económica y guías específicas relacionadas con apuestas online y ludopatía.
-                  </p>
-                  <div class="entry-actions">
-                    <a href="https://www.santander.com.ar/nosotros/edu-financiera" target="_blank" rel="noopener noreferrer" class="btn-resource">
-                      <span>Ver Contenidos Santander</span>
-                      <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </details>
-
-          <!-- 2. QUIERO ORDENAR MIS FINANZAS -->
-          <details class="resource-accordion-item" id="acc-ordenar" name="recursos-accordion">
-            <summary class="accordion-summary">
-              <div class="summary-title-wrapper">
-                <span class="category-badge info-badge">Herramientas Prácticas</span>
-                <span class="accordion-title-text">QUIERO ORDENAR MIS FINANZAS</span>
-              </div>
-              <span class="accordion-icon-indicator" aria-hidden="true">
-                <svg class="chevron-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </span>
-            </summary>
-            <div class="accordion-content-panel">
-              <p class="accordion-intro-p">
-                “Antes de tomar una nueva decisión financiera puede ser útil detenerse y mirar el conjunto.”
-              </p>
-
-              <div class="reflection-checklist-box">
-                <h4 class="checklist-title">Preguntas orientadoras para analizar antes de comprometer dinero:</h4>
-                <ul class="checklist-items">
-                  <li>
-                    <span class="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    </span>
-                    <span>¿Cuánto de mis ingresos ya está comprometido?</span>
-                  </li>
-                  <li>
-                    <span class="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    </span>
-                    <span>¿Conozco el costo total de esta financiación?</span>
-                  </li>
-                  <li>
-                    <span class="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    </span>
-                    <span>¿Estoy resolviendo un problema o trasladándolo al mes siguiente?</span>
-                  </li>
-                  <li>
-                    <span class="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    </span>
-                    <span>¿Qué ocurriría si aparece un imprevisto?</span>
-                  </li>
-                  <li>
-                    <span class="check-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    </span>
-                    <span>¿Qué posibilidades me abre o me cierra esta decisión?</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="official-tools-actions">
-                <h4 class="tools-actions-heading">Herramientas oficiales para consultar:</h4>
-                <div class="tools-buttons-row">
-                  <a href="https://www.bcra.gob.ar/herramientas-conocimientos/" target="_blank" rel="noopener noreferrer" class="btn-resource">
-                    <span>Herramientas del BCRA (presupuesto, crédito y tasas)</span>
-                    <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                  </a>
-                  <a href="https://www.argentina.gob.ar/economia/inclusion-financiera" target="_blank" rel="noopener noreferrer" class="btn-resource btn-resource-secondary">
-                    <span>Argentina.gob.ar — Derechos y Tarjetas</span>
-                    <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- 3. QUIERO ENTENDER MEJOR LAS APUESTAS ONLINE -->
-          <details class="resource-accordion-item" id="acc-entender" name="recursos-accordion">
-            <summary class="accordion-summary">
-              <div class="summary-title-wrapper">
-                <span class="category-badge info-badge">Análisis y Prevención</span>
-                <span class="accordion-title-text">QUIERO ENTENDER MEJOR LAS APUESTAS ONLINE</span>
-              </div>
-              <span class="accordion-icon-indicator" aria-hidden="true">
-                <svg class="chevron-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </span>
-            </summary>
-            <div class="accordion-content-panel">
-              <p class="accordion-intro-p">
-                “Las apuestas pueden comenzar como entretenimiento. El punto de atención no es solamente cuánto apuesta una persona, sino qué lugar empieza a ocupar el juego en su vida.”
-              </p>
-
-              <div class="signals-understanding-box">
-                <h4 class="signals-title">Señales para observar (sin emitir juicios ni moralizar):</h4>
-                <ul class="signals-list">
-                  <li><strong>Necesidad de recuperar pérdidas:</strong> creer que una nueva apuesta subsanará el dinero ya perdido.</li>
-                  <li><strong>Aumento de montos o frecuencia:</strong> necesidad de apostar sumas crecientes o con mayor regularidad.</li>
-                  <li><strong>Dificultad para detenerse:</strong> intentar fijar un límite y no poder respetarlo en la práctica.</li>
-                  <li><strong>Ocultamiento:</strong> disimular u ocultar a la familia o compañeros el tiempo o el dinero destinado al juego.</li>
-                  <li><strong>Uso de dinero comprometido:</strong> utilizar fondos previstos para servicios, alquiler, comida o deudas previas.</li>
-                  <li><strong>Interferencia con la vida cotidiana:</strong> afectación de vínculos familiares, cansancio laboral o incumplimiento de obligaciones.</li>
-                  <li><strong>Pedir dinero para continuar:</strong> solicitar préstamos o adelantos para seguir apostando o saldar deudas de juego.</li>
-                </ul>
-              </div>
-
-              <div class="loteria-reference-card">
-                <div class="loteria-header">
-                  <span class="loteria-tag">Organismo Provincial</span>
-                  <h4 class="loteria-title">Lotería de Córdoba — Programa Juego Responsable</h4>
-                </div>
-                <p class="loteria-desc">
-                  Brinda información institucional, asesoramiento confidencial, herramientas preventivas y recursos profesionales de asistencia.
-                </p>
-                <div class="entry-actions">
-                  <a href="https://loteriadecordoba.com.ar/juego-responsable" target="_blank" rel="noopener noreferrer" class="btn-resource">
-                    <span>Visitar Programa Juego Responsable</span>
-                    <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- 4. PREFIERO VER UN VIDEO -->
-          <details class="resource-accordion-item" id="acc-videos" name="recursos-accordion">
-            <summary class="accordion-summary">
-              <div class="summary-title-wrapper">
-                <span class="category-badge info-badge">Material Audiovisual</span>
-                <span class="accordion-title-text">PREFIERO VER UN VIDEO</span>
-              </div>
-              <span class="accordion-icon-indicator" aria-hidden="true">
-                <svg class="chevron-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </span>
-            </summary>
-            <div class="accordion-content-panel">
-              <p class="accordion-intro-p">
-                Selección de contenidos audiovisuales breves para profundizar de manera clara y accesible en la dinámica de las apuestas y el entorno digital.
-              </p>
-
-              <div class="videos-cards-grid">
-                <!-- Video 1 -->
-                <article class="video-item-card">
-                  <div class="video-preview-header">
-                    <span class="video-badge-tag">Video Educativo</span>
-                    <h4 class="video-title">Educación financiera y apuestas online: cuando la ludopatía no te deja dormir</h4>
-                    <span class="video-author">Santander Argentina</span>
-                  </div>
-                  <p class="video-desc">
-                    Material sobre apuestas online, ludopatía, ecosistemas digitales y sus consecuencias en la toma de decisiones cotidianas.
-                  </p>
-                  <div class="video-action">
-                    <a href="https://www.youtube.com/watch?v=sha87bVhsP8" target="_blank" rel="noopener noreferrer" class="btn-resource btn-resource-video">
-                      <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                      <span>Ver en YouTube</span>
-                    </a>
-                  </div>
-                </article>
-
-                <!-- Video 2 -->
-                <article class="video-item-card">
-                  <div class="video-preview-header">
-                    <span class="video-badge-tag">Prevención Familiar</span>
-                    <h4 class="video-title">Las apuestas en menores NO son un juego</h4>
-                    <span class="video-author">Santander Argentina</span>
-                  </div>
-                  <p class="video-desc">
-                    Material orientado especialmente a la prevención en jóvenes y familias frente al acceso temprano a plataformas de apuestas virtuales.
-                  </p>
-                  <div class="video-action">
-                    <a href="https://www.youtube.com/watch?v=f4oAh6WSttI" target="_blank" rel="noopener noreferrer" class="btn-resource btn-resource-video">
-                      <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                      <span>Ver en YouTube</span>
-                    </a>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </details>
-
-          <!-- 5. NECESITO PONER UN LÍMITE (Prioridad visual destacada) -->
-          <details class="resource-accordion-item item-priority" id="acc-limite" name="recursos-accordion">
-            <summary class="accordion-summary">
-              <div class="summary-title-wrapper">
-                <span class="category-badge priority-badge">Herramientas de Protección</span>
-                <span class="accordion-title-text font-strong">NECESITO PONER UN LÍMITE</span>
-              </div>
-              <span class="accordion-icon-indicator" aria-hidden="true">
-                <svg class="chevron-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </span>
-            </summary>
-            <div class="accordion-content-panel">
-              <div class="priority-statement-box">
-                <p class="statement-lead">
-                  “Cuando detenerse resulta difícil, no es necesario depender solamente de la fuerza de voluntad. Existen herramientas que permiten limitar o bloquear el acceso al juego.”
-                </p>
-              </div>
-
-              <article class="autoexclusion-card">
-                <div class="autoexclusion-header">
-                  <span class="protection-tag">Protección Activa</span>
-                  <h4 class="autoexclusion-title">Autoexclusión — Lotería de Córdoba</h4>
-                </div>
-                <p class="autoexclusion-desc">
-                  La autoexclusión es una herramienta formal y voluntaria que permite a una persona que necesita tomar distancia del juego bloquear su propio acceso a salas de juego y a plataformas de apuestas virtuales reguladas.
-                </p>
-                <div class="entry-actions">
-                  <a href="https://loteriadecordoba.com.ar/juego-responsable/autoexclusion" target="_blank" rel="noopener noreferrer" class="btn-resource btn-resource-accent">
-                    <span>CONOCER LAS OPCIONES DE AUTOEXCLUSIÓN</span>
-                    <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                  </a>
-                </div>
-              </article>
-            </div>
-          </details>
-
-          <!-- 6. NECESITO AYUDA / ME PREOCUPA ALGUIEN (Más visible, sin alarmismo) -->
-          <details class="resource-accordion-item item-priority item-help-prominent" id="acc-ayuda" name="recursos-accordion">
-            <summary class="accordion-summary">
-              <div class="summary-title-wrapper">
-                <span class="category-badge help-badge">Orientación y Asistencia</span>
-                <span class="accordion-title-text font-strong">NECESITO AYUDA / ME PREOCUPA ALGUIEN</span>
-              </div>
-              <span class="accordion-icon-indicator" aria-hidden="true">
-                <svg class="chevron-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </span>
-            </summary>
-            <div class="accordion-content-panel">
-              <div class="help-lead-header">
-                <h4 class="help-lead-title">“Pedir ayuda también es una decisión.”</h4>
-                <p class="help-lead-subtitle">Líneas telefónicas y servicios de acompañamiento profesional, confidencial y gratuito.</p>
-              </div>
-
-              <div class="help-channels-grid">
-                <!-- Lotería de Córdoba Línea -->
-                <article class="channel-card">
-                  <div class="channel-badge">Provincia de Córdoba</div>
-                  <h4 class="channel-title">Programa Juego Responsable</h4>
-                  <div class="phone-highlight-block">
-                    <a href="tel:08007772983" class="phone-link">0800-777-AYUDA (2983)</a>
-                    <span class="phone-availability">Orientación y asistencia. Disponible las 24 horas, los 365 días.</span>
-                  </div>
-                  <div class="channel-actions">
-                    <a href="https://loteriadecordoba.com.ar/juego-responsable" target="_blank" rel="noopener noreferrer" class="btn-resource btn-resource-accent">
-                      <span>VER RECURSOS DE AYUDA</span>
-                      <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
-                  </div>
-                </article>
-
-                <!-- Sedronar Línea 141 -->
-                <article class="channel-card">
-                  <div class="channel-badge">Alcance Nacional</div>
-                  <h4 class="channel-title">Línea 141 — SEDRONAR</h4>
-                  <div class="phone-highlight-block">
-                    <a href="tel:141" class="phone-link">Línea 141</a>
-                    <span class="phone-availability">Orientación nacional ante consumos problemáticos y ludopatía. Gratuita y anónima.</span>
-                  </div>
-                  <p class="channel-note">
-                    También pueden comunicarse familiares, amigos o compañeros de trabajo.
-                  </p>
-                  <div class="channel-actions">
-                    <a href="https://www.argentina.gob.ar/sedronar" target="_blank" rel="noopener noreferrer" class="btn-resource">
-                      <span>Información SEDRONAR</span>
-                      <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
-                  </div>
-                </article>
-              </div>
-
-              <!-- SI TE PREOCUPA UN COMPAÑERO -->
-              <aside class="peer-guidance-card">
-                <div class="peer-header">
-                  <span class="peer-tag">Abordaje entre Pares</span>
-                  <h4 class="peer-title">SI TE PREOCUPA UN COMPAÑERO</h4>
-                </div>
-                <ul class="peer-advice-list">
-                  <li>
-                    <span class="advice-num">1</span>
-                    <span><strong>Evitá ridiculizar o sermonear:</strong> las bromas y reproches provocan aislamiento y mayor resistencia.</span>
-                  </li>
-                  <li>
-                    <span class="advice-num">2</span>
-                    <span><strong>Buscá un momento privado para hablar:</strong> un espacio reservado facilita la conversación sincera.</span>
-                  </li>
-                  <li>
-                    <span class="advice-num">3</span>
-                    <span><strong>Partí de hechos concretos:</strong> expresalo desde lo observable, por ejemplo: <em>“noté que últimamente...”</em>.</span>
-                  </li>
-                  <li>
-                    <span class="advice-num">4</span>
-                    <span><strong>Escuchá y facilitá información sobre ayuda disponible:</strong> acercale los canales de contacto de forma respetuosa.</span>
-                  </li>
-                </ul>
-                <div class="peer-disclaimer">
-                  No es necesario convertirse en terapeuta ni resolver personalmente el problema. Acompañar es conectar con recursos idóneos.
-                </div>
-              </aside>
-
-            </div>
-          </details>
-
-        </div><!-- Fin acordeones -->
+        </div><!-- Fin grid de 2x3 botones -->
 
         <!-- 7. CONTACTO DEL CAPACITADOR -->
         <div class="trainer-contact-section">
@@ -1221,6 +847,372 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-outline" id="btnAbortReset">Cancelar</button>
         <button type="button" class="btn btn-danger" id="btnConfirmReset">Sí, reiniciar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODALES DE RECURSOS POR NECESIDAD ================= -->
+
+  <!-- Modal 1: Aprender Finanzas -->
+  <div class="modal-backdrop modal-resource-backdrop" id="modalResourceAprender" role="dialog" aria-modal="true" aria-labelledby="titleResourceAprender" style="display: none;">
+    <div class="modal-card modal-card-large modal-resource-card">
+      <div class="modal-header">
+        <div class="modal-badge badge-info">Información / Aprendizaje</div>
+        <button type="button" class="btn-close-modal" data-close-modal aria-label="Cerrar ventana">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3 class="modal-title" id="titleResourceAprender">QUIERO APRENDER SOBRE FINANZAS</h3>
+        <p class="resource-modal-intro">
+          “Para quienes desean incorporar conceptos básicos de administración del dinero, entender instrumentos cotidianos y tomar decisiones más conscientes.”
+        </p>
+
+        <div class="resources-entries-stack">
+          <!-- Entrada 1: BCRA -->
+          <article class="resource-entry-card">
+            <div class="entry-card-header">
+              <span class="entry-sub-tag">Banco Central de la República Argentina</span>
+              <h4 class="entry-main-title">BCRA — Programa de Educación Financiera</h4>
+            </div>
+            <p class="entry-description">
+              Cursos gratuitos y abiertos, guías prácticas sobre presupuesto, ahorro, cuenta bancaria, medios de pago y endeudamiento responsable.
+            </p>
+            <div class="entry-actions">
+              <a href="https://www.bcra.gob.ar/educacion-financiera/" target="_blank" rel="noopener noreferrer" class="btn-resource btn-resource-accent">
+                <span>VER PROGRAMAS DEL BCRA</span>
+                <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Entrada 2: Inclusión Financiera -->
+          <article class="resource-entry-card">
+            <div class="entry-card-header">
+              <span class="entry-sub-tag">República Argentina</span>
+              <h4 class="entry-main-title">Portal de Inclusión y Educación Financiera</h4>
+            </div>
+            <p class="entry-description">
+              Información institucional clara sobre derechos del usuario financiero, uso de tarjetas, prevención de fraudes y administración personal.
+            </p>
+            <div class="entry-actions">
+              <a href="https://www.argentina.gob.ar/economia/inclusion-financiera" target="_blank" rel="noopener noreferrer" class="btn-resource">
+                <span>ACCEDER AL PORTAL OFICIAL</span>
+                <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-close-modal>Entendido / Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Ordenar Finanzas -->
+  <div class="modal-backdrop modal-resource-backdrop" id="modalResourceOrdenar" role="dialog" aria-modal="true" aria-labelledby="titleResourceOrdenar" style="display: none;">
+    <div class="modal-card modal-card-large modal-resource-card">
+      <div class="modal-header">
+        <div class="modal-badge badge-info">Herramientas Prácticas</div>
+        <button type="button" class="btn-close-modal" data-close-modal aria-label="Cerrar ventana">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3 class="modal-title" id="titleResourceOrdenar">QUIERO ORDENAR MIS FINANZAS</h3>
+        <p class="resource-modal-intro">
+          “Antes de tomar una nueva decisión financiera puede ser útil detenerse y mirar el conjunto.”
+        </p>
+
+        <div class="reflection-checklist-box">
+          <h4 class="checklist-title">Preguntas orientadoras para analizar antes de comprometer dinero:</h4>
+          <ul class="checklist-items">
+            <li>
+              <span class="check-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span>¿Cuánto de mis ingresos ya está comprometido?</span>
+            </li>
+            <li>
+              <span class="check-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span>¿Conozco el costo total de esta financiación?</span>
+            </li>
+            <li>
+              <span class="check-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span>¿Estoy resolviendo un problema o trasladándolo al mes siguiente?</span>
+            </li>
+            <li>
+              <span class="check-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span>¿Qué ocurriría si aparece un imprevisto?</span>
+            </li>
+            <li>
+              <span class="check-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span>¿Qué posibilidades me abre o me cierra esta decisión?</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="official-tools-actions">
+          <h4 class="tools-actions-heading">Herramientas oficiales para consultar:</h4>
+          <div class="tools-buttons-row">
+            <a href="https://www.bcra.gob.ar/herramientas-conocimientos/" target="_blank" rel="noopener noreferrer" class="btn-resource btn-resource-accent">
+              <span>Herramientas del BCRA (presupuesto, crédito y tasas)</span>
+              <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+            <a href="https://www.argentina.gob.ar/economia/inclusion-financiera" target="_blank" rel="noopener noreferrer" class="btn-resource">
+              <span>Argentina.gob.ar — Derechos y Tarjetas</span>
+              <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-close-modal>Entendido / Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Entender Apuestas -->
+  <div class="modal-backdrop modal-resource-backdrop" id="modalResourceEntender" role="dialog" aria-modal="true" aria-labelledby="titleResourceEntender" style="display: none;">
+    <div class="modal-card modal-card-large modal-resource-card">
+      <div class="modal-header">
+        <div class="modal-badge badge-info">Análisis y Prevención</div>
+        <button type="button" class="btn-close-modal" data-close-modal aria-label="Cerrar ventana">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3 class="modal-title" id="titleResourceEntender">QUIERO ENTENDER MEJOR LAS APUESTAS ONLINE</h3>
+        <p class="resource-modal-intro">
+          “Las apuestas pueden comenzar como entretenimiento. El punto de atención no es solamente cuánto apuesta una persona, sino qué lugar empieza a ocupar el juego en su vida.”
+        </p>
+
+        <div class="signals-understanding-box">
+          <h4 class="signals-title">Señales para observar (sin emitir juicios ni moralizar):</h4>
+          <ul class="signals-list">
+            <li><strong>Necesidad de recuperar pérdidas:</strong> creer que una nueva apuesta subsanará el dinero ya perdido.</li>
+            <li><strong>Aumento de montos o frecuencia:</strong> necesidad de apostar sumas crecientes o con mayor regularidad.</li>
+            <li><strong>Dificultad para detenerse:</strong> intentar fijar un límite y no poder respetarlo en la práctica.</li>
+            <li><strong>Ocultamiento:</strong> disimular u ocultar a la familia o compañeros el tiempo o el dinero destinado al juego.</li>
+            <li><strong>Uso de dinero comprometido:</strong> utilizar fondos previstos para servicios, alquiler, comida o deudas previas.</li>
+            <li><strong>Interferencia con la vida cotidiana:</strong> afectación de vínculos familiares, cansancio laboral o incumplimiento de obligaciones.</li>
+            <li><strong>Pedir dinero para continuar:</strong> solicitar préstamos o adelantos para seguir apostando o saldar deudas de juego.</li>
+          </ul>
+        </div>
+
+        <div class="loteria-reference-card">
+          <div class="loteria-header">
+            <span class="loteria-tag">Organismo Provincial</span>
+            <h4 class="loteria-title">Lotería de Córdoba — Programa Juego Responsable</h4>
+          </div>
+          <p class="loteria-desc">
+            Brinda información institucional, asesoramiento confidencial, herramientas preventivas y recursos profesionales de asistencia.
+          </p>
+          <div class="entry-actions">
+            <a href="https://loteriadecordoba.com.ar/juego-responsable" target="_blank" rel="noopener noreferrer" class="btn-resource btn-resource-accent">
+              <span>VER INFORMACIÓN EN LOTERÍA DE CÓRDOBA</span>
+              <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-close-modal>Entendido / Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Videos Formativos -->
+  <div class="modal-backdrop modal-resource-backdrop" id="modalResourceVideos" role="dialog" aria-modal="true" aria-labelledby="titleResourceVideos" style="display: none;">
+    <div class="modal-card modal-card-large modal-resource-card">
+      <div class="modal-header">
+        <div class="modal-badge badge-info">Material Audiovisual</div>
+        <button type="button" class="btn-close-modal" data-close-modal aria-label="Cerrar ventana">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3 class="modal-title" id="titleResourceVideos">VIDEOS INFORMATIVOS Y FORMATIVOS</h3>
+        <p class="resource-modal-intro">
+          “Recursos en video para comprender la dinámica de las apuestas digitales y la educación financiera.”
+        </p>
+
+        <div class="videos-cards-grid">
+          <!-- Video 1 -->
+          <article class="video-item-card">
+            <div class="video-preview-header">
+              <span class="video-badge-tag">Dinámica y Riesgos</span>
+              <h4 class="video-title">Apuestas online: ¿Qué hay detrás del juego?</h4>
+              <span class="video-author">Chequeado</span>
+            </div>
+            <p class="video-desc">
+              Análisis explicativo sobre el funcionamiento de las plataformas de apuestas, los algoritmos y los mecanismos que estimulan el juego compulsivo.
+            </p>
+            <div class="video-action">
+              <a href="https://www.youtube.com/watch?v=F7zMhYn7J0o" target="_blank" rel="noopener noreferrer" class="btn-resource btn-resource-video">
+                <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>Ver en YouTube</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Video 2 -->
+          <article class="video-item-card">
+            <div class="video-preview-header">
+              <span class="video-badge-tag">Prevención Familiar</span>
+              <h4 class="video-title">Las apuestas en menores NO son un juego</h4>
+              <span class="video-author">Santander Argentina</span>
+            </div>
+            <p class="video-desc">
+              Material orientado especialmente a la prevención en jóvenes y familias frente al acceso temprano a plataformas de apuestas virtuales.
+            </p>
+            <div class="video-action">
+              <a href="https://www.youtube.com/watch?v=f4oAh6WSttI" target="_blank" rel="noopener noreferrer" class="btn-resource btn-resource-video">
+                <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>Ver en YouTube</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-close-modal>Entendido / Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Poner un Límite -->
+  <div class="modal-backdrop modal-resource-backdrop" id="modalResourceLimite" role="dialog" aria-modal="true" aria-labelledby="titleResourceLimite" style="display: none;">
+    <div class="modal-card modal-card-large modal-resource-card">
+      <div class="modal-header">
+        <div class="modal-badge badge-limit">Herramientas de Protección</div>
+        <button type="button" class="btn-close-modal" data-close-modal aria-label="Cerrar ventana">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3 class="modal-title" id="titleResourceLimite">HERRAMIENTAS PARA PONER UN LÍMITE</h3>
+        
+        <div class="priority-statement-box">
+          <p class="statement-lead">
+            “Cuando detenerse resulta difícil, no es necesario depender solamente de la fuerza de voluntad. Existen herramientas formales que permiten limitar o bloquear el acceso al juego.”
+          </p>
+        </div>
+
+        <article class="autoexclusion-card">
+          <div class="autoexclusion-header">
+            <span class="protection-tag">Protección Activa</span>
+            <h4 class="autoexclusion-title">Autoexclusión — Lotería de Córdoba</h4>
+          </div>
+          <p class="autoexclusion-desc">
+            La autoexclusión es una herramienta formal y voluntaria que permite a una persona que necesita tomar distancia del juego bloquear su propio acceso a salas presenciales y a plataformas de apuestas virtuales oficiales y reguladas en la Provincia de Córdoba.
+          </p>
+          <div class="entry-actions">
+            <a href="https://loteriadecordoba.com.ar/juego-responsable/autoexclusion" target="_blank" rel="noopener noreferrer" class="btn-resource btn-resource-accent">
+              <span>CONOCER LAS OPCIONES DE AUTOEXCLUSIÓN</span>
+              <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+        </article>
+
+        <div class="practical-limits-card">
+          <h4 class="limits-card-title">Medidas complementarias de autocuidado:</h4>
+          <ul class="limits-items-list">
+            <li>
+              <strong>Límites en cuentas y billeteras virtuales:</strong> Reducir los montos máximos diarios de transferencia y solicitar la baja de descubiertos o préstamos automáticos desde la app bancaria.
+            </li>
+            <li>
+              <strong>Bloqueo de aplicaciones:</strong> Emplear herramientas o filtros de bloqueo de dominios y sitios de apuestas en teléfonos y computadoras.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-close-modal>Entendido / Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: Pedir Ayuda / Asistencia -->
+  <div class="modal-backdrop modal-resource-backdrop" id="modalResourceAyuda" role="dialog" aria-modal="true" aria-labelledby="titleResourceAyuda" style="display: none;">
+    <div class="modal-card modal-card-large modal-resource-card">
+      <div class="modal-header">
+        <div class="modal-badge badge-help">Orientación y Asistencia</div>
+        <button type="button" class="btn-close-modal" data-close-modal aria-label="Cerrar ventana">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="help-lead-header">
+          <h3 class="help-lead-title" id="titleResourceAyuda">“Pedir ayuda también es una decisión.”</h3>
+          <p class="help-lead-subtitle">Líneas telefónicas y servicios de acompañamiento profesional, confidencial y gratuito.</p>
+        </div>
+
+        <div class="help-channels-grid">
+          <!-- Lotería de Córdoba Línea -->
+          <article class="channel-card">
+            <div class="channel-badge">Provincia de Córdoba</div>
+            <h4 class="channel-title">Programa Juego Responsable</h4>
+            <div class="phone-highlight-block">
+              <a href="tel:08007772983" class="phone-link">0800-777-AYUDA (2983)</a>
+              <span class="phone-availability">Orientación y asistencia. Disponible las 24 horas, los 365 días. Gratuito y confidencial.</span>
+            </div>
+            <div class="channel-actions">
+              <a href="https://loteriadecordoba.com.ar/juego-responsable" target="_blank" rel="noopener noreferrer" class="btn-resource btn-resource-accent">
+                <span>VER RECURSOS DE AYUDA EN CÓRDOBA</span>
+                <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Sedronar Línea 141 -->
+          <article class="channel-card">
+            <div class="channel-badge">Alcance Nacional</div>
+            <h4 class="channel-title">Línea 141 — SEDRONAR</h4>
+            <div class="phone-highlight-block">
+              <a href="tel:141" class="phone-link">Línea 141</a>
+              <span class="phone-availability">Orientación nacional ante consumos problemáticos y adicciones conductuales. Gratuita y anónima.</span>
+            </div>
+            <p class="channel-note">
+              También pueden comunicarse familiares, amigos o compañeros de trabajo.
+            </p>
+            <div class="channel-actions">
+              <a href="https://www.argentina.gob.ar/sedronar" target="_blank" rel="noopener noreferrer" class="btn-resource">
+                <span>Información SEDRONAR</span>
+                <svg class="icon-external" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- SI TE PREOCUPA UN COMPAÑERO -->
+        <aside class="peer-guidance-card">
+          <div class="peer-header">
+            <span class="peer-tag">Abordaje entre Pares</span>
+            <h4 class="peer-title">SI TE PREOCUPA UN COMPAÑERO</h4>
+          </div>
+          <ul class="peer-advice-list">
+            <li>
+              <span class="advice-num">1</span>
+              <span><strong>Evitá ridiculizar o sermonear:</strong> las bromas y reproches provocan aislamiento y mayor resistencia.</span>
+            </li>
+            <li>
+              <span class="advice-num">2</span>
+              <span><strong>Buscá un momento privado para hablar:</strong> un espacio reservado facilita la conversación sincera.</span>
+            </li>
+            <li>
+              <span class="advice-num">3</span>
+              <span><strong>Partí de hechos concretos:</strong> expresalo desde lo observable, por ejemplo: <em>“noté que últimamente...”</em>.</span>
+            </li>
+            <li>
+              <span class="advice-num">4</span>
+              <span><strong>Escuchá y facilitá información sobre ayuda disponible:</strong> acercale los canales de contacto de forma respetuosa.</span>
+            </li>
+          </ul>
+          <div class="peer-disclaimer">
+            No es necesario convertirse en terapeuta ni resolver personalmente el problema. Acompañar es conectar con recursos idóneos.
+          </div>
+        </aside>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-close-modal>Entendido / Cerrar</button>
       </div>
     </div>
   </div>
