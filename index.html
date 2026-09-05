@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educación Financiera y Apuestas Online · Capacitación</title>
+  <meta name="description" content="Taller interactivo de análisis de casos sobre educación financiera y apuestas online para personal policial de la Provincia de Córdoba.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Contenedor principal de la aplicación -->
+  <div class="app-container">
+
+    <!-- CABECERA INSTITUCIONAL Y CRONÓMETRO (Visible de forma persistente) -->
+    <header class="top-header" id="topHeader" aria-label="Cabecera institucional y control de tiempo">
+      <div class="header-inner">
+        <div class="header-brand">
+          <span class="badge-provincia">Capacitación Provincial</span>
+          <h1 class="header-app-title">Educación Financiera y Apuestas Online</h1>
+        </div>
+
+        <div class="header-actions">
+          <button type="button" class="btn-utility" id="btnOpenConcepts" aria-haspopup="dialog" aria-controls="modalConcepts">
+            <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            <span>Conceptos</span>
+          </button>
+
+          <button type="button" class="btn-utility btn-utility-hint" id="btnOpenClue" aria-haspopup="dialog" aria-controls="modalClue">
+            <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            <span>Pista</span>
+          </button>
+
+          <button type="button" class="btn-utility btn-utility-subtle" id="btnResetActivity" title="Reiniciar actividad" aria-label="Reiniciar actividad">
+            <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
+              <path d="M21 3v5h-5"></path>
+              <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
+              <path d="M3 21v-5h5"></path>
+            </svg>
+            <span class="desktop-only">Reiniciar</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de tiempo y estado del cronómetro (visible a partir de iniciar) -->
+      <div class="timer-wrapper" id="timerWrapper" style="display: none;">
+        <div class="timer-info-row">
+          <div class="timer-display-group">
+            <span class="timer-label">Tiempo disponible:</span>
+            <span class="timer-clock" id="timerClock" aria-live="polite">30:00</span>
+          </div>
+          <div class="timer-guide-message" id="timerGuideMessage" aria-live="polite">
+            Lean y analicen la situación.
+          </div>
+          <div class="step-indicator-wrapper" id="stepIndicator">
+            Paso <span id="currentStepNum">1</span> de 11
+          </div>
+        </div>
+        <div class="timer-progress-track" role="progressbar" aria-label="Tiempo transcurrido del taller" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="timerProgressTrack">
+          <div class="timer-progress-bar" id="timerProgressBar" style="width: 0%;"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ÁREA PRINCIPAL: PANTALLAS CONSECUTIVAS -->
+    <main class="main-content" id="mainContent" role="main">
+
+      <!-- ================= PANTALLA 1: INICIO ================= -->
+      <section class="screen-view active" id="screen-1" data-screen="1" aria-labelledby="title-screen-1">
+        <div class="card-hero">
+          <span class="tag-category">Taller de Análisis de Casos</span>
+          <h2 class="title-primary" id="title-screen-1">EDUCACIÓN FINANCIERA Y APUESTAS ONLINE</h2>
+          <p class="subtitle-primary">Trabajo en equipos · 30 minutos</p>
+
+          <div class="quote-box-purpose">
+            <div class="quote-icon" aria-hidden="true">“</div>
+            <p class="quote-text">
+              El objetivo no es encontrar una respuesta correcta.<br>
+              El objetivo es analizar una situación cotidiana, escuchar distintas miradas y reconocer cómo determinadas decisiones pueden ampliar o reducir el margen de acción de una persona.
+            </p>
+          </div>
+
+          <div class="methodology-pill-banner">
+            <span class="pill-item">PARAR</span>
+            <span class="pill-divider">·</span>
+            <span class="pill-item">MIRAR</span>
+            <span class="pill-divider">·</span>
+            <span class="pill-item">DECIDIR</span>
+          </div>
+
+          <div class="screen-action-center">
+            <button type="button" class="btn btn-primary btn-large" id="btnStartWorkshop">
+              COMENZAR
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PANTALLA 2: ORGANIZACIÓN DEL EQUIPO ================= -->
+      <section class="screen-view" id="screen-2" data-screen="2" aria-labelledby="title-screen-2">
+        <div class="content-panel">
+          <header class="panel-header">
+            <span class="panel-kicker">Organización inicial</span>
+            <h2 class="panel-title" id="title-screen-2">ANTES DE EMPEZAR</h2>
+            <p class="panel-description">Formen un equipo de 3 o 4 personas.</p>
+          </header>
+
+          <div class="roles-grid">
+            <article class="role-card">
+              <div class="role-header">
+                <div class="role-badge">Rol 1</div>
+                <h3 class="role-title">COORDINADOR/A</h3>
+              </div>
+              <p class="role-desc">
+                Organiza el tiempo y procura que todas las personas del grupo tengan oportunidad de participar.
+              </p>
+            </article>
+
+            <article class="role-card">
+              <div class="role-header">
+                <div class="role-badge">Rol 2</div>
+                <h3 class="role-title">QUIEN TOMA NOTA</h3>
+              </div>
+              <p class="role-desc">
+                Registra las ideas principales y compartirá una de ellas durante la puesta en común.
+              </p>
+            </article>
+          </div>
+
+          <div class="highlight-notice">
+            <div class="notice-icon" aria-hidden="true">ℹ️</div>
+            <div class="notice-content">
+              <p class="notice-text">
+                <strong>No es necesario responder todas las preguntas.</strong> Prioricen aquellas que generen mayor discusión. Lo importante es que cada integrante tenga oportunidad de expresar su opinión, incluso cuando existan desacuerdos.
+              </p>
+            </div>
+          </div>
+
+          <nav class="screen-nav">
+            <button type="button" class="btn btn-outline" data-action="prev">Volver</button>
+            <button type="button" class="btn btn-primary" data-action="next">NUESTRO EQUIPO ESTÁ LISTO</button>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ================= PANTALLA 3: ASIGNACIÓN DEL CASO ================= -->
+      <section class="screen-view" id="screen-3" data-screen="3" aria-labelledby="title-screen-3">
+        <div class="content-panel">
+          <header class="panel-header">
+            <span class="panel-kicker">Distribución de casos</span>
+            <h2 class="panel-title" id="title-screen-3">ASIGNACIÓN DEL CASO</h2>
+            <p class="panel-description">Cada equipo trabajará sobre una situación específica. Presionen el botón para que el sistema asigne el caso de su grupo.</p>
+          </header>
+
+          <div class="cases-overview-grid" id="casesOverviewGrid">
+            <div class="case-card-preview" id="preview-case-1">
+              <span class="case-number-badge">Caso 1</span>
+              <h3 class="case-preview-title">Todo entra en la cuota</h3>
+              <p class="case-preview-tagline">Financiamiento continuo y gastos imprevistos.</p>
+              <div class="case-assigned-pill" aria-hidden="true">Asignado a su equipo</div>
+            </div>
+
+            <div class="case-card-preview" id="preview-case-2">
+              <span class="case-number-badge">Caso 2</span>
+              <h3 class="case-preview-title">El resumen que nunca termina</h3>
+              <p class="case-preview-tagline">Uso de tarjeta de crédito y pago mínimo.</p>
+              <div class="case-assigned-pill" aria-hidden="true">Asignado a su equipo</div>
+            </div>
+
+            <div class="case-card-preview" id="preview-case-3">
+              <span class="case-number-badge">Caso 3</span>
+              <h3 class="case-preview-title">Una más y recupero</h3>
+              <p class="case-preview-tagline">Apuestas deportivas individuales e ilusión de control.</p>
+              <div class="case-assigned-pill" aria-hidden="true">Asignado a su equipo</div>
+            </div>
+
+            <div class="case-card-preview" id="preview-case-4">
+              <span class="case-number-badge">Caso 4</span>
+              <h3 class="case-preview-title">¿Me meto o no me meto?</h3>
+              <p class="case-preview-tagline">Señales en el ámbito laboral y dilema entre pares.</p>
+              <div class="case-assigned-pill" aria-hidden="true">Asignado a su equipo</div>
+            </div>
+          </div>
+
+          <!-- Estado previo a la asignación -->
+          <div class="assignment-control-box" id="assignmentActionBox">
+            <p class="assignment-instruction">Hagan clic en el siguiente botón para asignar aleatoriamente el caso a analizar:</p>
+            <button type="button" class="btn btn-primary btn-large" id="btnAssignCase">
+              ASIGNAR CASO
+            </button>
+          </div>
+
+          <!-- Estado posterior a la asignación -->
+          <div class="assignment-result-box" id="assignmentResultBox" style="display: none;">
+            <div class="result-badge">Caso asignado para su equipo:</div>
+            <h3 class="result-title" id="assignedCaseTitle">CASO 1 — TODO ENTRA EN LA CUOTA</h3>
+            <p class="result-note">A continuación accederán a la lectura completa del caso antes de iniciar las preguntas.</p>
+          </div>
+
+          <nav class="screen-nav">
+            <button type="button" class="btn btn-outline" data-action="prev">Volver</button>
+            <button type="button" class="btn btn-primary" id="btnGoToCaseReading" style="display: none;" data-action="next">
+              CONTINUAR AL CASO ASIGNADO
+            </button>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ================= PANTALLA 4: LECTURA DEL CASO ================= -->
+      <section class="screen-view" id="screen-4" data-screen="4" aria-labelledby="title-screen-4">
+        <div class="content-panel case-reading-panel">
+          <header class="panel-header text-left">
+            <span class="panel-kicker" id="readingCaseKicker">CASO ASIGNADO</span>
+            <h2 class="panel-title case-main-title" id="title-screen-4">CASO 1 — TODO ENTRA EN LA CUOTA</h2>
+          </header>
+
+          <article class="case-narrative-container" id="caseNarrativeContainer">
+            <!-- El contenido narrativo completo del caso se inyecta dinámicamente -->
+          </article>
+
+          <div class="highlight-notice reading-reminder">
+            <div class="notice-icon" aria-hidden="true">📖</div>
+            <div class="notice-content">
+              <p class="notice-text">
+                <strong>Lean primero el caso completo.</strong> No intenten resolverlo mientras una persona del grupo todavía está leyendo.
+              </p>
+            </div>
+          </div>
+
+          <nav class="screen-nav">
+            <button type="button" class="btn btn-outline" data-action="prev">Volver</button>
+            <button type="button" class="btn btn-primary btn-large" data-action="next">YA LO LEÍMOS</button>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ================= PANTALLA 5: PARAR ================= -->
+      <section class="screen-view" id="screen-5" data-screen="5" aria-labelledby="title-screen-5">
+        <div class="content-panel">
+          <header class="method-stage-header">
+            <div class="stage-tag">Momento 1 de análisis</div>
+            <h2 class="stage-headline" id="title-screen-5">PARAR</h2>
+            <p class="stage-subhead">“Antes de aconsejar o juzgar, reconstruyan qué ocurrió.”</p>
+          </header>
+
+          <div class="questions-list">
+            <div class="form-group-field">
+              <label for="input_p1_momentos" class="field-label">
+                <span class="field-num">1.</span>
+                <span>Señalen dos o tres momentos del relato en los que una decisión cambia el rumbo de la situación:</span>
+              </label>
+              <textarea id="input_p1_momentos" class="form-textarea" rows="4" placeholder="Escriban brevemente los momentos identificados por el grupo..."></textarea>
+              <span class="field-help">Guardado automático en este equipo.</span>
+            </div>
+
+            <div class="form-group-field">
+              <label for="input_p1_porque" class="field-label">
+                <span class="field-num">2.</span>
+                <span>¿Por qué eligieron esos momentos?</span>
+              </label>
+              <textarea id="input_p1_porque" class="form-textarea" rows="3" placeholder="Registren las razones o puntos de vista del debate grupal..."></textarea>
+            </div>
+
+            <div class="form-group-field">
+              <label for="input_p1_senales" class="field-label">
+                <span class="field-num">3.</span>
+                <span>¿Qué situaciones o señales les llaman especialmente la atención?</span>
+              </label>
+              <textarea id="input_p1_senales" class="form-textarea" rows="3" placeholder="Detalles, frases, supuestos o conductas observadas en el relato..."></textarea>
+            </div>
+          </div>
+
+          <nav class="screen-nav">
+            <button type="button" class="btn btn-outline" data-action="prev">Volver al caso</button>
+            <button type="button" class="btn btn-primary" data-action="next">Continuar a MIRAR</button>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ================= PANTALLA 6: MIRAR ================= -->
+      <section class="screen-view" id="screen-6" data-screen="6" aria-labelledby="title-screen-6">
+        <div class="content-panel">
+          <header class="method-stage-header">
+            <div class="stage-tag">Momento 2 de análisis</div>
+            <h2 class="stage-headline" id="title-screen-6">MIRAR</h2>
+            <p class="stage-subhead">“Una decisión no puede evaluarse mirando solamente una parte de la situación.”</p>
+          </header>
+
+          <!-- Disparadores de pensamiento (no dan respuestas, estimulan el análisis) -->
+          <div class="triggers-wrapper" aria-label="Ejes para pensar y ampliar la mirada">
+            <span class="triggers-title">Ejes para considerar en la discusión del grupo:</span>
+            <div class="triggers-tags-grid">
+              <button type="button" class="trigger-chip" data-trigger="ingresos">INGRESOS</button>
+              <button type="button" class="trigger-chip" data-trigger="gastos">GASTOS</button>
+              <button type="button" class="trigger-chip" data-trigger="deudas">DEUDAS</button>
+              <button type="button" class="trigger-chip" data-trigger="cuotas">CUOTAS</button>
+              <button type="button" class="trigger-chip" data-trigger="tiempo">TIEMPO</button>
+              <button type="button" class="trigger-chip" data-trigger="costo">COSTO TOTAL</button>
+              <button type="button" class="trigger-chip" data-trigger="personas">PERSONAS INVOLUCRADAS</button>
+              <button type="button" class="trigger-chip" data-trigger="consecuencias">CONSECUENCIAS</button>
+            </div>
+            <p class="triggers-note">Estas etiquetas no son respuestas correctas; funcionan como recordatorios para no perder de vista variables importantes.</p>
+          </div>
+
+          <div class="questions-list">
+            <div class="form-group-field">
+              <label for="input_p2_faltante" class="field-label">
+                <span class="field-num">1.</span>
+                <span>¿Qué información falta para poder evaluar mejor el caso?</span>
+              </label>
+              <textarea id="input_p2_faltante" class="form-textarea" rows="4" placeholder="¿Qué datos no se mencionan y cambiarían el panorama?..."></textarea>
+            </div>
+
+            <div class="form-group-field">
+              <label for="input_p2_conocer" class="field-label">
+                <span class="field-num">2.</span>
+                <span>¿Qué sería importante conocer antes de aconsejar a esta persona?</span>
+              </label>
+              <textarea id="input_p2_conocer" class="form-textarea" rows="3" placeholder="Aspectos clave a indagar antes de emitir una opinión..."></textarea>
+            </div>
+          </div>
+
+          <!-- Cuadro secundario: Concepto para recordar -->
+          <aside class="concept-callout-card" aria-label="Concepto pedagógico para recordar">
+            <div class="callout-header">
+              <span class="callout-icon" aria-hidden="true">💡</span>
+              <h3 class="callout-title">CONCEPTO PARA RECORDAR</h3>
+            </div>
+            <p class="callout-body">
+              “Una cuota puede parecer pequeña, pero también compromete ingreso futuro.”
+            </p>
+          </aside>
+
+          <nav class="screen-nav">
+            <button type="button" class="btn btn-outline" data-action="prev">Volver a PARAR</button>
+            <button type="button" class="btn btn-primary" data-action="next">Continuar a DECIDIR</button>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ================= PANTALLA 7: DECIDIR ================= -->
+      <section class="screen-view" id="screen-7" data-screen="7" aria-labelledby="title-screen-7">
+        <div class="content-panel">
+          <header class="method-stage-header">
+            <div class="stage-tag">Momento 3 de análisis</div>
+            <h2 class="stage-headline" id="title-screen-7">DECIDIR</h2>
+            <p class="stage-subhead">Construcción de alternativas y análisis de consecuencias.</p>
+          </header>
+
+          <div class="instruction-box-clean">
+            <h3 class="instruction-title">¿Qué opciones reales tiene esta persona en este momento?</h3>
+            <p class="instruction-desc">Definan en el equipo al menos dos alternativas posibles y analicen sus consecuencias inmediatas y futuras. No es obligatorio completar las tres opciones.</p>
+          </div>
+
+          <div class="options-analysis-grid">
+            <!-- OPCIÓN A -->
+            <article class="option-card">
+              <div class="option-card-header">
+                <span class="option-pill">Alternativa 1</span>
+                <h4 class="option-title">OPCIÓN A</h4>
+              </div>
+              <div class="option-card-body">
+                <div class="form-group-field">
+                  <label for="input_optA_desc" class="subfield-label">Descripción de la opción:</label>
+                  <input type="text" id="input_optA_desc" class="form-input" placeholder="Ej: Usar el ahorro familiar / refinanciar...">
+                </div>
+                <div class="form-group-field">
+                  <label for="input_optA_inmediato" class="subfield-label">¿Qué podría resolver inmediatamente?</label>
+                  <textarea id="input_optA_inmediato" class="form-textarea form-textarea-compact" rows="2" placeholder="Efecto inmediato..."></textarea>
+                </div>
+                <div class="form-group-field">
+                  <label for="input_optA_corto" class="subfield-label">¿Qué consecuencia podría tener en el corto plazo?</label>
+                  <textarea id="input_optA_corto" class="form-textarea form-textarea-compact" rows="2" placeholder="Próximas semanas / mes siguiente..."></textarea>
+                </div>
+                <div class="form-group-field">
+                  <label for="input_optA_meses" class="subfield-label">¿Qué consecuencia podría tener en algunos meses?</label>
+                  <textarea id="input_optA_meses" class="form-textarea form-textarea-compact" rows="2" placeholder="Mediano plazo / impacto futuro..."></textarea>
+                </div>
+              </div>
+            </article>
+
+            <!-- OPCIÓN B -->
+            <article class="option-card">
+              <div class="option-card-header">
+                <span class="option-pill">Alternativa 2</span>
+                <h4 class="option-title">OPCIÓN B</h4>
+              </div>
+              <div class="option-card-body">
+                <div class="form-group-field">
+                  <label for="input_optB_desc" class="subfield-label">Descripción de la opción:</label>
+                  <input type="text" id="input_optB_desc" class="form-input" placeholder="Ej: Tomar crédito rápido / recortar gastos...">
+                </div>
+                <div class="form-group-field">
+                  <label for="input_optB_inmediato" class="subfield-label">¿Qué podría resolver inmediatamente?</label>
+                  <textarea id="input_optB_inmediato" class="form-textarea form-textarea-compact" rows="2" placeholder="Efecto inmediato..."></textarea>
+                </div>
+                <div class="form-group-field">
+                  <label for="input_optB_corto" class="subfield-label">¿Qué consecuencia podría tener en el corto plazo?</label>
+                  <textarea id="input_optB_corto" class="form-textarea form-textarea-compact" rows="2" placeholder="Próximas semanas / mes siguiente..."></textarea>
+                </div>
+                <div class="form-group-field">
+                  <label for="input_optB_meses" class="subfield-label">¿Qué consecuencia podría tener en algunos meses?</label>
+                  <textarea id="input_optB_meses" class="form-textarea form-textarea-compact" rows="2" placeholder="Mediano plazo / impacto futuro..."></textarea>
+                </div>
+              </div>
+            </article>
+
+            <!-- OPCIÓN C -->
+            <article class="option-card optional-card">
+              <div class="option-card-header">
+                <span class="option-pill">Alternativa 3 (Opcional)</span>
+                <h4 class="option-title">OPCIÓN C</h4>
+              </div>
+              <div class="option-card-body">
+                <div class="form-group-field">
+                  <label for="input_optC_desc" class="subfield-label">Descripción de la opción:</label>
+                  <input type="text" id="input_optC_desc" class="form-input" placeholder="Otra alternativa pensada por el equipo...">
+                </div>
+                <div class="form-group-field">
+                  <label for="input_optC_inmediato" class="subfield-label">¿Qué podría resolver inmediatamente?</label>
+                  <textarea id="input_optC_inmediato" class="form-textarea form-textarea-compact" rows="2" placeholder="Efecto inmediato..."></textarea>
+                </div>
+                <div class="form-group-field">
+                  <label for="input_optC_corto" class="subfield-label">¿Qué consecuencia podría tener en el corto plazo?</label>
+                  <textarea id="input_optC_corto" class="form-textarea form-textarea-compact" rows="2" placeholder="Próximas semanas..."></textarea>
+                </div>
+                <div class="form-group-field">
+                  <label for="input_optC_meses" class="subfield-label">¿Qué consecuencia podría tener en algunos meses?</label>
+                  <textarea id="input_optC_meses" class="form-textarea form-textarea-compact" rows="2" placeholder="Mediano plazo..."></textarea>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <nav class="screen-nav">
+            <button type="button" class="btn btn-outline" data-action="prev">Volver a MIRAR</button>
+            <button type="button" class="btn btn-primary" data-action="next">Continuar</button>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ================= PANTALLA 8: DETENERSE O PEDIR AYUDA ================= -->
+      <section class="screen-view" id="screen-8" data-screen="8" aria-labelledby="title-screen-8">
+        <div class="content-panel">
+          <header class="panel-header text-left">
+            <span class="panel-kicker">Punto de inflexión</span>
+            <h2 class="panel-title" id="title-screen-8">¿EN QUÉ MOMENTO CAMBIA LA SITUACIÓN?</h2>
+          </header>
+
+          <div class="form-group-field">
+            <label for="input_p4_senial_ayuda" class="field-label">
+              <span>¿En qué momento aparece una señal que justificaría detenerse, revisar la situación o pedir ayuda?</span>
+            </label>
+            <textarea id="input_p4_senial_ayuda" class="form-textarea" rows="6" placeholder="Describan la señal, el momento o la situación en la que el margen de acción se reduce significativamente..."></textarea>
+          </div>
+
+          <!-- Tarjeta conceptual discreta para Casos 3 y 4 (Apuestas) -->
+          <div class="risk-cycle-card" id="riskCycleCard" style="display: none;" aria-label="Dinámica conceptual de apuestas">
+            <div class="risk-card-header">
+              <span class="risk-badge">Dinámica de riesgo</span>
+              <h3 class="risk-title">Ciclo en situaciones de apuestas</h3>
+            </div>
+            <p class="risk-text-intro">
+              En las apuestas puede aparecer una dinámica riesgosa cuando una pérdida genera la necesidad de recuperarla mediante una nueva apuesta.
+            </p>
+            <div class="risk-flow-diagram" aria-label="Esquema: Perder, querer recuperar, volver a apostar, arriesgar más, aumentar las pérdidas">
+              <span class="flow-step">Perder</span>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step">Querer recuperar</span>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step">Volver a apostar</span>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step">Arriesgar más</span>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step danger-step">Aumentar pérdidas</span>
+            </div>
+            <p class="risk-disclaimer">
+              Este esquema no se presenta como un diagnóstico individual, sino como un patrón observable de pérdida progresiva de control.
+            </p>
+          </div>
+
+          <nav class="screen-nav">
+            <button type="button" class="btn btn-outline" data-action="prev">Volver a DECIDIR</button>
+            <button type="button" class="btn btn-primary" data-action="next">Continuar</button>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ================= PANTALLA 9: SI FUERA UN COMPAÑERO ================= -->
+      <section class="screen-view" id="screen-9" data-screen="9" aria-labelledby="title-screen-9">
+        <div class="content-panel reflective-panel">
+          <header class="panel-header text-left">
+            <span class="panel-kicker">Reflexión vincular y profesional</span>
+            <h2 class="panel-title" id="title-screen-9">SI FUERA UN COMPAÑERO CERCANO...</h2>
+          </header>
+
+          <div class="questions-list">
+            <div class="form-group-field">
+              <label for="input_p5_que_harian" class="field-label">
+                <span class="field-num">1.</span>
+                <span>¿Qué harían ustedes?</span>
+              </label>
+              <textarea id="input_p5_que_harian" class="form-textarea" rows="4" placeholder="Acciones, acercamiento o propuesta que formularían..."></textarea>
+            </div>
+
+            <div class="form-group-field">
+              <label for="input_p5_que_evitarian" class="field-label">
+                <span class="field-num">2.</span>
+                <span>¿Qué evitarían hacer?</span>
+              </label>
+              <textarea id="input_p5_que_evitarian" class="form-textarea" rows="4" placeholder="Conductas, comentarios o actitudes que convendría evitar..."></textarea>
+            </div>
+          </div>
+
+          <div class="reflective-guidance-box">
+            <p class="guidance-text">
+              No se trata solamente de decidir qué consejo dar. Piensen también cómo hablarían, qué tono utilizarían y qué podría hacer que la otra persona se cierre o acepte ayuda.
+            </p>
+          </div>
+
+          <nav class="screen-nav">
+            <button type="button" class="btn btn-outline" data-action="prev">Volver</button>
+            <button type="button" class="btn btn-primary" data-action="next">Continuar</button>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ================= PANTALLA 10: PREPARAR LA PUESTA EN COMÚN ================= -->
+      <section class="screen-view" id="screen-10" data-screen="10" aria-labelledby="title-screen-10">
+        <div class="content-panel">
+          <header class="panel-header text-left">
+            <span class="panel-kicker">Plenario grupal</span>
+            <h2 class="panel-title" id="title-screen-10">PREPAREN UNA IDEA PARA COMPARTIR</h2>
+            <p class="panel-description">
+              No deberán contar todas las respuestas.
+            </p>
+          </header>
+
+          <div class="share-instructions-card">
+            <p class="share-lead">
+              <strong>Quien tomó nota</strong> elegirá <strong>UNA</strong> de estas posibilidades para compartir con el resto del grupo en la puesta en común:
+            </p>
+            <ul class="share-options-list">
+              <li><span class="bullet" aria-hidden="true">•</span> <span>Una idea que les haya resultado importante;</span></li>
+              <li><span class="bullet" aria-hidden="true">•</span> <span>Un desacuerdo que haya aparecido en la discusión;</span></li>
+              <li><span class="bullet" aria-hidden="true">•</span> <span>Una pregunta que haya quedado abierta;</span></li>
+              <li><span class="bullet" aria-hidden="true">•</span> <span>Algo que al principio parecía evidente y después dejaron de ver tan claro.</span></li>
+            </ul>
+          </div>
+
+          <div class="form-group-field">
+            <label for="input_p6_idea_compartir" class="field-label large-label">
+              <span>NUESTRA IDEA PARA COMPARTIR:</span>
+            </label>
+            <textarea id="input_p6_idea_compartir" class="form-textarea form-textarea-large" rows="5" placeholder="Sinteticen aquí la idea, desacuerdo o pregunta seleccionada por el equipo..."></textarea>
+            <span class="field-help">Esta respuesta servirá de apoyo directo a quien tomó nota durante los 10 minutos de cierre.</span>
+          </div>
+
+          <nav class="screen-nav">
+            <button type="button" class="btn btn-outline" data-action="prev">Volver</button>
+            <button type="button" class="btn btn-primary" data-action="next">IR AL CIERRE</button>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ================= PANTALLA 11: CIERRE ================= -->
+      <section class="screen-view" id="screen-11" data-screen="11" aria-labelledby="title-screen-11">
+        <div class="content-panel conclusion-panel">
+          <div class="triad-conclusion-box">
+            <span class="triad-item">PARAR</span>
+            <span class="triad-separator">·</span>
+            <span class="triad-item">MIRAR</span>
+            <span class="triad-separator">·</span>
+            <span class="triad-item">DECIDIR</span>
+          </div>
+
+          <div class="conclusion-message-block">
+            <p class="conclusion-concept-phrase">
+              “Una pequeña decisión puede ampliar o reducir nuestro margen para decidir mañana.”
+            </p>
+
+            <div class="final-question-highlight">
+              <p class="final-question-text">
+                “Si hago esto hoy, ¿qué posibilidades me abre o me cierra mañana?”
+              </p>
+            </div>
+          </div>
+
+          <div class="screen-action-center" id="closureActionsArea">
+            <button type="button" class="btn btn-primary btn-large" id="btnFinalizeWorkshop">
+              FINALIZAR
+            </button>
+          </div>
+
+          <!-- Vista de confirmación final y acceso rápido al resumen para la puesta en común -->
+          <div class="team-summary-drawer" id="teamSummaryDrawer" style="display: none;">
+            <div class="drawer-header">
+              <h3 class="drawer-title">Notas registradas por el equipo</h3>
+              <button type="button" class="btn-utility" id="btnPrintSummary">
+                <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                  <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                <span>Imprimir / Guardar</span>
+              </button>
+            </div>
+            <div class="drawer-content" id="summaryContentContainer">
+              <!-- Se genera dinámicamente con las respuestas del equipo -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ================= PIE DE PÁGINA: RECURSOS OFICIALES ================= -->
+    <footer class="app-footer" aria-label="Recursos oficiales de información y ayuda">
+      <div class="footer-inner">
+        <h3 class="footer-title">RECURSOS PARA INFORMARSE O PEDIR AYUDA</h3>
+        <ul class="resources-list">
+          <li class="resource-item">
+            <span class="resource-dot" aria-hidden="true">•</span>
+            <span class="resource-name">Banco Central de la República Argentina</span>
+            <span class="resource-desc">— Educación financiera.</span>
+          </li>
+          <li class="resource-item">
+            <span class="resource-dot" aria-hidden="true">•</span>
+            <span class="resource-name">Lotería de Córdoba</span>
+            <span class="resource-desc">— Programa Juego Responsable.</span>
+          </li>
+          <li class="resource-item">
+            <span class="resource-dot" aria-hidden="true">•</span>
+            <span class="resource-name">Línea 141</span>
+            <span class="resource-desc">— Orientación nacional sobre consumos problemáticos y ludopatía.</span>
+          </li>
+        </ul>
+        <p class="footer-copy">Material de apoyo pedagógico para capacitación presencial.</p>
+      </div>
+    </footer>
+
+  </div><!-- Fin app-container -->
+
+  <!-- ================= MODAL: PISTAS ORIENTADORAS ================= -->
+  <div class="modal-backdrop" id="modalClue" role="dialog" aria-modal="true" aria-labelledby="clueModalTitle" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-badge">Pregunta orientadora</div>
+        <button type="button" class="btn-close-modal" id="btnCloseClue" aria-label="Cerrar modal de pista">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3 class="modal-title" id="clueModalTitle">Pregunta para pensar en equipo</h3>
+        <div class="clue-box">
+          <p class="clue-question-text" id="clueQuestionText">
+            <!-- Texto aleatorio de la pista -->
+          </p>
+        </div>
+        <p class="clue-notice">
+          Esta pregunta no contiene la respuesta. Es un disparador para analizar opciones y consecuencias.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" id="btnNextClue">Otra pregunta</button>
+        <button type="button" class="btn btn-primary" id="btnDismissClue">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: CONCEPTOS PARA RECORDAR ================= -->
+  <div class="modal-backdrop" id="modalConcepts" role="dialog" aria-modal="true" aria-labelledby="conceptsModalTitle" style="display: none;">
+    <div class="modal-card modal-card-large">
+      <div class="modal-header">
+        <div class="modal-badge">Herramientas teóricas</div>
+        <button type="button" class="btn-close-modal" id="btnCloseConcepts" aria-label="Cerrar modal de conceptos">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3 class="modal-title" id="conceptsModalTitle">CONCEPTOS PARA RECORDAR</h3>
+        <div class="concepts-list">
+          <article class="concept-item">
+            <h4 class="concept-item-title">1. INGRESO FUTURO COMPROMETIDO</h4>
+            <p class="concept-item-desc">Una deuda o cuota utiliza parte del dinero que todavía no cobramos.</p>
+          </article>
+
+          <article class="concept-item">
+            <h4 class="concept-item-title">2. COSTO TOTAL</h4>
+            <p class="concept-item-desc">No mirar solamente cuánto se paga por mes. También importa cuánto se termina pagando en total y durante cuánto tiempo.</p>
+          </article>
+
+          <article class="concept-item">
+            <h4 class="concept-item-title">3. RESERVA Y MARGEN</h4>
+            <p class="concept-item-desc">Una reserva permite enfrentar imprevistos sin depender automáticamente de una nueva deuda.</p>
+          </article>
+
+          <article class="concept-item">
+            <h4 class="concept-item-title">4. PERSEGUIR LAS PÉRDIDAS</h4>
+            <p class="concept-item-desc">Intentar recuperar mediante nuevas apuestas lo perdido anteriormente puede aumentar rápidamente el riesgo.</p>
+          </article>
+
+          <article class="concept-item">
+            <h4 class="concept-item-title">5. PEDIR AYUDA</h4>
+            <p class="concept-item-desc">Cuando una conducta comienza a interferir con obligaciones, vínculos, trabajo o capacidad de decisión, consultar puede ser una forma de recuperar margen.</p>
+          </article>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="btnDismissConcepts">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: CONFIRMACIÓN DE REINICIO ================= -->
+  <div class="modal-backdrop" id="modalResetConfirm" role="dialog" aria-modal="true" aria-labelledby="resetModalTitle" style="display: none;">
+    <div class="modal-card modal-card-small">
+      <div class="modal-header">
+        <div class="modal-badge">Reiniciar taller</div>
+        <button type="button" class="btn-close-modal" id="btnCancelReset" aria-label="Cancelar reinicio">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h3 class="modal-title" id="resetModalTitle">¿Desean reiniciar la actividad?</h3>
+        <p class="modal-text">
+          Se borrarán las respuestas guardadas en este dispositivo y se restablecerá el cronómetro a los 30 minutos iniciales.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" id="btnAbortReset">Cancelar</button>
+        <button type="button" class="btn btn-danger" id="btnConfirmReset">Sí, reiniciar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
