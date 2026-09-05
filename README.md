@@ -2,6 +2,9 @@
 
 Plataforma web educativa, responsive y sobria, diseñada para **personal policial adulto de la Provincia de Córdoba, Argentina**, para ser utilizada durante un taller presencial de capacitación grupal.
 
+- **Sitio web en vivo (Netlify):** [https://capacitacion-financiera-policia.netlify.app](https://capacitacion-financiera-policia.netlify.app)
+- **Repositorio de código (GitHub):** [https://github.com/morini-prog/capacitacion-financiera-policia](https://github.com/morini-prog/capacitacion-financiera-policia)
+
 ---
 
 ## 1. Contexto Pedagógico y Metodológico
