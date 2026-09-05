@@ -237,6 +237,123 @@ body {
   padding: 1.25rem 1rem 2.5rem 1rem;
 }
 
+/* --- BANNER DEL CASO ACTIVO EN ANÁLISIS (Pantallas de preguntas) --- */
+.active-case-top-banner {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-left: 5px solid var(--blue-primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.active-case-banner-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.active-case-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.9rem 1.125rem;
+  background-color: var(--bg-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.active-case-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.active-case-badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--blue-accent);
+}
+
+.active-case-headline {
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: var(--blue-primary);
+  line-height: 1.25;
+}
+
+.btn-toggle-active-case {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.65rem;
+  font-family: var(--font-base);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--blue-primary);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  flex-shrink: 0;
+  min-height: 36px;
+}
+
+.btn-toggle-active-case:hover, .btn-toggle-active-case:focus-visible {
+  background-color: var(--blue-subtle);
+  border-color: var(--blue-border);
+  outline: none;
+}
+
+.toggle-case-svg {
+  transition: transform 0.2s ease;
+}
+
+.active-case-body {
+  padding: 1rem 1.125rem 1.25rem 1.125rem;
+  background-color: #ffffff;
+}
+
+.active-case-narrative {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-main);
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.active-case-narrative::-webkit-scrollbar {
+  width: 6px;
+}
+
+.active-case-narrative::-webkit-scrollbar-track {
+  background: var(--bg-subtle);
+  border-radius: 3px;
+}
+
+.active-case-narrative::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 3px;
+}
+
+.active-case-narrative::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+.active-case-narrative p {
+  margin-bottom: 0.85rem;
+}
+
+.active-case-narrative p:last-child {
+  margin-bottom: 0;
+}
+
 /* Pantallas / Secciones */
 .screen-view {
   display: none;

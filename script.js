@@ -134,6 +134,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const readingCaseTitle = document.getElementById('title-screen-4');
   const caseNarrativeContainer = document.getElementById('caseNarrativeContainer');
 
+  // Banner superior del caso en análisis (pantallas 5 a 10)
+  const activeCaseTopBanner = document.getElementById('activeCaseTopBanner');
+  const topActiveCaseTitle = document.getElementById('topActiveCaseTitle');
+  const topActiveCaseNarrative = document.getElementById('topActiveCaseNarrative');
+  const btnToggleActiveCase = document.getElementById('btnToggleActiveCase');
+  const toggleActiveCaseLabel = document.getElementById('toggleActiveCaseLabel');
+  const toggleCaseIcon = document.getElementById('toggleCaseIcon');
+  const topActiveCaseBody = document.getElementById('topActiveCaseBody');
+
   // Pantalla 8
   const riskCycleCard = document.getElementById('riskCycleCard');
 
@@ -276,6 +285,9 @@ document.addEventListener('DOMContentLoaded', () => {
       renderScreen11Summary();
     }
 
+    // Actualizar visibilidad del banner del caso en pantallas de preguntas
+    renderActiveCaseTopBanner();
+
     // Scroll al inicio del contenido
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -351,6 +363,45 @@ document.addEventListener('DOMContentLoaded', () => {
       const p = document.createElement('p');
       p.textContent = pText;
       caseNarrativeContainer.appendChild(p);
+    });
+  }
+
+  function renderActiveCaseTopBanner() {
+    const isQuestionScreen = state.currentScreen >= 5 && state.currentScreen <= 10;
+    if (!isQuestionScreen || !state.assignedCaseId) {
+      if (activeCaseTopBanner) activeCaseTopBanner.style.display = 'none';
+      return;
+    }
+
+    const cData = CASES_DATA[state.assignedCaseId];
+    if (!cData) return;
+
+    topActiveCaseTitle.textContent = `${cData.number} — ${cData.title}`;
+    topActiveCaseNarrative.innerHTML = '';
+    cData.paragraphs.forEach(pText => {
+      const p = document.createElement('p');
+      p.textContent = pText;
+      topActiveCaseNarrative.appendChild(p);
+    });
+
+    activeCaseTopBanner.style.display = 'block';
+  }
+
+  let isCaseBannerExpanded = true;
+  if (btnToggleActiveCase) {
+    btnToggleActiveCase.addEventListener('click', () => {
+      isCaseBannerExpanded = !isCaseBannerExpanded;
+      if (isCaseBannerExpanded) {
+        topActiveCaseBody.style.display = 'block';
+        toggleActiveCaseLabel.textContent = 'Ocultar relato';
+        btnToggleActiveCase.setAttribute('aria-expanded', 'true');
+        toggleCaseIcon.style.transform = 'rotate(0deg)';
+      } else {
+        topActiveCaseBody.style.display = 'none';
+        toggleActiveCaseLabel.textContent = 'Ver relato';
+        btnToggleActiveCase.setAttribute('aria-expanded', 'false');
+        toggleCaseIcon.style.transform = 'rotate(180deg)';
+      }
     });
   }
 

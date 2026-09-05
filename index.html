@@ -72,6 +72,29 @@
     <!-- ÁREA PRINCIPAL: PANTALLAS CONSECUTIVAS -->
     <main class="main-content" id="mainContent" role="main">
 
+      <!-- BANNER DEL CASO ASIGNADO EN ANÁLISIS (Visible en la parte superior al responder preguntas) -->
+      <aside class="active-case-top-banner" id="activeCaseTopBanner" style="display: none;" aria-label="Caso asignado en análisis">
+        <div class="active-case-banner-inner">
+          <div class="active-case-header-row">
+            <div class="active-case-meta">
+              <span class="active-case-badge">Caso en análisis</span>
+              <h3 class="active-case-headline" id="topActiveCaseTitle">CASO 1 — TODO ENTRA EN LA CUOTA</h3>
+            </div>
+            <button type="button" class="btn-toggle-active-case" id="btnToggleActiveCase" aria-expanded="true" aria-controls="topActiveCaseBody">
+              <span id="toggleActiveCaseLabel">Ocultar relato</span>
+              <svg class="toggle-case-svg" id="toggleCaseIcon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </button>
+          </div>
+          <div class="active-case-body" id="topActiveCaseBody">
+            <div class="active-case-narrative" id="topActiveCaseNarrative">
+              <!-- Se inyectan los párrafos completos del caso seleccionado -->
+            </div>
+          </div>
+        </div>
+      </aside>
+
       <!-- ================= PANTALLA 1: INICIO ================= -->
       <section class="screen-view active" id="screen-1" data-screen="1" aria-labelledby="title-screen-1">
         <div class="card-hero">
