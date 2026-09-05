@@ -432,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
       <div class="summary-block" style="border: 2px solid var(--blue-primary); background-color: #ffffff;">
-        <div class="summary-block-title" style="color: var(--blue-primary); font-size: 0.9375rem;">⭐ NUESTRA IDEA PARA LA PUESTA EN COMÚN</div>
+        <div class="summary-block-title" style="color: var(--blue-primary); font-size: 0.9375rem; letter-spacing: 0.05em;">IDEA PRINCIPAL PARA LA PUESTA EN COMÚN</div>
         <div class="summary-block-text" style="font-size: 1.0625rem; font-weight: 600;">${escapeHtml(state.answers['input_p6_idea_compartir'] || '— Sin registro')}</div>
       </div>
     `;
@@ -626,7 +626,23 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
-  // 11. INICIALIZACIÓN GENERAL
+  // 11. ACORDEONES DE RECURSOS (EXCLUSIVIDAD)
+  // ==========================================
+  const resourceAccordions = document.querySelectorAll('.resource-accordion-item');
+  resourceAccordions.forEach(item => {
+    item.addEventListener('toggle', () => {
+      if (item.open) {
+        resourceAccordions.forEach(otherItem => {
+          if (otherItem !== item && otherItem.open) {
+            otherItem.open = false;
+          }
+        });
+      }
+    });
+  });
+
+  // ==========================================
+  // 12. INICIALIZACIÓN GENERAL
   // ==========================================
   restoreFormAnswers();
 
