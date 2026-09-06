@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     4: {
       id: 4,
       number: 'CASO 4',
-      title: '¿ME METO O NO ME METO?',
+      title: 'EL DILEMA DE LA INTERVENCIÓN',
       subtitle: 'Señales en el ámbito laboral y dilema entre pares.',
       summary: 'Martín pasa las guardias apostando de madrugada en su celular, llega exhausto al servicio y pide dinero prestado a camaradas para tapar pérdidas. El grupo nota el deterioro pero discute si intervenir y ofrecer ayuda o si sería invadir su intimidad.',
       paragraphs: [
