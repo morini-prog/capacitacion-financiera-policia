@@ -61,13 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const CLUES_LIST = [
-    '¿Qué ingreso futuro ya está comprometido?',
-    '¿Qué información todavía no conocen?',
-    '¿Qué puede ocurrir si esta decisión se repite varias veces?',
-    '¿Cuál de las opciones resuelve el problema de hoy pero podría generar otro mañana?',
-    '¿Qué podría hacer que la persona pierda margen para decidir?',
-    '¿Qué conducta está intentando solucionar una consecuencia con una nueva conducta similar?',
-    '¿Qué alternativas no están considerando?'
+    '¿Qué ingreso futuro ya está comprometido por las cuotas y compromisos previos?',
+    '“Si hago esto hoy, ¿qué posibilidades me abre o me cierra mañana?”',
+    '¿Esta decisión responde a una necesidad básica o a un deseo que puede esperar?',
+    '¿Qué información financiera todavía no conocen con precisión (tasas, CFT, plazo total)?',
+    '¿Se está considerando el límite de la tarjeta como si fuera un ingreso propio?',
+    '¿Se está pagando el mínimo o refinanciando deuda con más deuda (efecto bola de nieve)?',
+    '¿La persona está apostando para recuperar pérdidas pasadas? (La apuesta nunca es un plan de recuperación)',
+    '¿Cuál de las opciones resuelve el problema de hoy pero debilita el margen de mañana?',
+    '¿Qué alternativas permitirían FRENAR, ORDENAR y PEDIR AYUDA antes de empeorar la situación?',
+    '¿Cómo podemos acompañar a un compañero sin juzgarlo ni prestarle dinero que prolongue el problema?'
   ];
 
   const STORAGE_KEY = 'capacitacion_policia_cba_v1';
@@ -580,6 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
   btnOpenClue.addEventListener('click', () => {
     showRandomClue();
     modalClue.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
   });
 
   btnNextClue.addEventListener('click', () => {
@@ -588,6 +592,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function closeClueModal() {
     modalClue.style.display = 'none';
+    document.body.style.overflow = '';
   }
 
   btnCloseClue.addEventListener('click', closeClueModal);
@@ -598,24 +603,54 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   btnOpenConcepts.addEventListener('click', () => {
     modalConcepts.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
   });
 
   function closeConceptsModal() {
     modalConcepts.style.display = 'none';
+    document.body.style.overflow = '';
   }
 
   btnCloseConcepts.addEventListener('click', closeConceptsModal);
   btnDismissConcepts.addEventListener('click', closeConceptsModal);
+
+  // Filtros temáticos del Marco Teórico
+  const theoryTabBtns = document.querySelectorAll('.theory-tab-btn');
+  const theoryCards = document.querySelectorAll('.theory-module-card');
+
+  theoryTabBtns.forEach(tab => {
+    tab.addEventListener('click', () => {
+      theoryTabBtns.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const filter = tab.getAttribute('data-theory-filter');
+
+      theoryCards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          card.classList.remove('is-hidden');
+        } else {
+          card.classList.add('is-hidden');
+        }
+      });
+    });
+  });
 
   // ==========================================
   // 10. REINICIO DE LA ACTIVIDAD
   // ==========================================
   btnResetActivity.addEventListener('click', () => {
     modalResetConfirm.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
   });
 
   function closeResetModal() {
     modalResetConfirm.style.display = 'none';
+    document.body.style.overflow = '';
   }
 
   btnCancelReset.addEventListener('click', closeResetModal);

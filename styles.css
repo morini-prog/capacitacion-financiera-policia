@@ -2479,6 +2479,331 @@ body {
   background-color: #ffffff;
 }
 
+/* ============================================================
+   MARCO TEÓRICO: PANTALLA 2, PANTALLA 11 Y GUÍA DE CONCEPTOS
+   ============================================================ */
+
+/* Pantalla 2: Método PARAR - MIRAR - DECIDIR */
+.analysis-method-box {
+  background-color: var(--bna-celeste-light);
+  border: 1px solid var(--bna-celeste-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.method-box-title {
+  font-size: 0.875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--bna-blue-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.method-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .method-steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.method-step-card {
+  background-color: #ffffff;
+  border: 1px solid var(--bna-celeste-border);
+  border-radius: 12px;
+  padding: 1rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 6px rgba(0, 95, 134, 0.04);
+}
+
+.step-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  background-color: var(--bna-blue-primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  align-self: flex-start;
+  letter-spacing: 0.03em;
+}
+
+.step-text {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Pantalla 11: 4 Ejes de Síntesis del Marco Teórico */
+.synthesis-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+@media (min-width: 640px) {
+  .synthesis-pillars-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.synthesis-pillar-card {
+  background-color: #ffffff;
+  border: 1px solid var(--bna-celeste-border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 95, 134, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-number-tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--bna-blue-petrol);
+  background-color: var(--bna-celeste-light);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  align-self: flex-start;
+  border: 1px solid var(--bna-celeste-border);
+}
+
+.synthesis-pillar-title {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--bna-blue-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.synthesis-pillar-text {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Modal de Guía Teórica (15 Módulos) */
+.modal-theory-card {
+  max-width: 820px;
+  width: 95%;
+  max-height: 90vh;
+}
+
+.theory-modal-intro-header {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #dce8ef;
+}
+
+.theory-modal-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.theory-nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--bna-celeste-border);
+}
+
+.theory-tab-btn {
+  background-color: var(--bna-celeste-light);
+  border: 1px solid var(--bna-celeste-border);
+  color: var(--bna-blue-primary);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 0.45rem 0.85rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+  line-height: 1.3;
+}
+
+.theory-tab-btn:hover {
+  background-color: var(--bna-blue-petrol);
+  border-color: var(--bna-blue-petrol);
+  color: #ffffff;
+}
+
+.theory-tab-btn.active {
+  background-color: var(--bna-blue-primary);
+  border-color: var(--bna-blue-primary);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 95, 134, 0.2);
+}
+
+.theory-modules-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.theory-module-card {
+  background-color: #ffffff;
+  border: 1px solid #dce8ef;
+  border-radius: 16px;
+  padding: 1.35rem 1.4rem;
+  box-shadow: 0 2px 8px rgba(0, 95, 134, 0.05);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.theory-module-card:hover {
+  border-color: var(--bna-blue-petrol);
+  box-shadow: 0 4px 14px rgba(0, 95, 134, 0.1);
+}
+
+.theory-module-card.is-hidden {
+  display: none !important;
+}
+
+.theory-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.theory-module-number {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+}
+
+.theory-cat-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--bna-blue-petrol);
+  background-color: var(--bna-celeste-light);
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  border: 1px solid var(--bna-celeste-border);
+}
+
+.theory-module-title {
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: var(--bna-blue-primary);
+  line-height: 1.35;
+  margin-bottom: 0.65rem;
+}
+
+.theory-module-text {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.85rem;
+}
+
+.theory-items-bullet, .theory-steps-ordered {
+  margin: 0 0 0.85rem 1.25rem;
+  padding: 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.theory-callout-box {
+  background-color: var(--bna-celeste-light);
+  border-left: 4px solid var(--bna-blue-petrol);
+  border-radius: 0 10px 10px 0;
+  padding: 0.85rem 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.theory-callout-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--bna-blue-primary);
+  margin-bottom: 0.3rem;
+}
+
+.theory-callout-text {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--bna-blue-primary);
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.theory-practical-note {
+  font-size: 0.8125rem;
+  color: #475569;
+  line-height: 1.5;
+  background-color: #f8fafc;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.theory-triad-display {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+@media (min-width: 640px) {
+  .theory-triad-display {
+    flex-direction: row;
+  }
+}
+
+.triad-step-item {
+  flex: 1;
+  background-color: #f8fafc;
+  border: 1px solid var(--bna-celeste-border);
+  border-radius: 10px;
+  padding: 0.75rem 0.85rem;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.triad-step-num {
+  display: inline-block;
+  background-color: var(--bna-blue-primary);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.75rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 0.4rem;
+}
+
 /* --- Accesibilidad y Responsive Auxiliar --- */
 @media (max-width: 600px) {
   .desktop-only {
