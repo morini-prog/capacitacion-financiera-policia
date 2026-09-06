@@ -1,4 +1,5 @@
-# Capacitación Provincial: Educación Financiera y Apuestas Online
+# Fortalecimiento del entorno familiar y desarrollo personal: Cuidados Financieros
+## Educación Financiera y Apuestas Online
 
 Plataforma web educativa, responsive y sobria, diseñada para **personal policial adulto de la Provincia de Córdoba, Argentina**, para ser utilizada durante un taller presencial de capacitación grupal.
 
