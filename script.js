@@ -564,6 +564,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Pantalla 2: Módulos conceptuales desplegables
+  const moduleToggles = document.querySelectorAll('.btn-module-toggle');
+  const btnExpandAllModules = document.getElementById('btnExpandAllModules');
+  const btnCollapseAllModules = document.getElementById('btnCollapseAllModules');
+
+  function setModuleExpanded(toggleBtn, shouldExpand) {
+    const contentId = toggleBtn.getAttribute('aria-controls');
+    const contentPanel = document.getElementById(contentId);
+    const statusText = toggleBtn.querySelector('.module-toggle-status');
+    const chevron = toggleBtn.querySelector('.module-chevron-icon');
+
+    if (shouldExpand) {
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      toggleBtn.classList.add('is-open');
+      if (contentPanel) contentPanel.style.display = 'block';
+      if (statusText) statusText.textContent = 'Ocultar';
+      if (chevron) chevron.style.transform = 'rotate(180deg)';
+    } else {
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.classList.remove('is-open');
+      if (contentPanel) contentPanel.style.display = 'none';
+      if (statusText) statusText.textContent = 'Ver módulo';
+      if (chevron) chevron.style.transform = 'rotate(0deg)';
+    }
+  }
+
+  moduleToggles.forEach(toggleBtn => {
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      setModuleExpanded(toggleBtn, !isExpanded);
+    });
+  });
+
+  if (btnExpandAllModules) {
+    btnExpandAllModules.addEventListener('click', () => {
+      moduleToggles.forEach(btn => setModuleExpanded(btn, true));
+    });
+  }
+
+  if (btnCollapseAllModules) {
+    btnCollapseAllModules.addEventListener('click', () => {
+      moduleToggles.forEach(btn => setModuleExpanded(btn, false));
+    });
+  }
+
   // Pantalla 2: Selección de caso
   caseSelectCards.forEach(card => {
     card.addEventListener('click', (e) => {
