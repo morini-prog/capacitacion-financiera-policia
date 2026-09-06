@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '¿Cómo podemos acompañar a un compañero sin juzgarlo ni prestarle dinero que prolongue el problema?'
   ];
 
-  const STORAGE_KEY = 'capacitacion_policia_cba_v3';
+  const STORAGE_KEY = 'capacitacion_policia_cba_v2';
   const TOTAL_WORKSHOP_SECONDS = 30 * 60; // 30 minutos
 
   // ==========================================
@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   function goToScreen(step) {
     if (step < 1) step = 1;
-    if (step > 3) step = 3;
+    if (step > 4) step = 4;
 
     state.currentScreen = step;
     saveCurrentState();
@@ -313,12 +313,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Acciones específicas por pantalla
-    if (step === 1) {
+    if (step === 2) {
       highlightActiveCaseInGrid();
-    } else if (step === 2) {
-      renderScreen2Resolution();
     } else if (step === 3) {
-      renderScreen3Devolucion();
+      renderScreen3Resolution();
+    } else if (step === 4) {
+      renderScreen4Devolucion();
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -340,15 +340,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function selectCase(caseId) {
     if (!CASES_DATA[caseId]) return;
     state.assignedCaseId = caseId;
-    startTimer();
     saveCurrentState();
-    goToScreen(2);
+    goToScreen(3);
   }
 
   // ==========================================
-  // 6. RENDERIZADO DE PANTALLAS 2 Y 3
+  // 6. RENDERIZADO DE PANTALLAS 3 Y 4
   // ==========================================
-  function renderScreen2Resolution() {
+  function renderScreen3Resolution() {
     if (!state.assignedCaseId || !CASES_DATA[state.assignedCaseId]) {
       // Si por alguna razón no hay caso asignado, default a caso 1
       state.assignedCaseId = 1;
@@ -373,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
     restoreFormAnswers();
   }
 
-  function renderScreen3Devolucion() {
+  function renderScreen4Devolucion() {
     const cData = CASES_DATA[state.assignedCaseId] || CASES_DATA[1];
 
     let html = `
@@ -550,7 +549,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (btnEditAnswers) {
     btnEditAnswers.addEventListener('click', () => {
-      goToScreen(2);
+      goToScreen(3);
     });
   }
 
@@ -562,51 +561,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btnStartWorkshop.addEventListener('click', () => {
       startTimer();
       goToScreen(2);
-    });
-  }
-
-  // Pantalla 2: Módulos conceptuales desplegables
-  const moduleToggles = document.querySelectorAll('.btn-module-toggle');
-  const btnExpandAllModules = document.getElementById('btnExpandAllModules');
-  const btnCollapseAllModules = document.getElementById('btnCollapseAllModules');
-
-  function setModuleExpanded(toggleBtn, shouldExpand) {
-    const contentId = toggleBtn.getAttribute('aria-controls');
-    const contentPanel = document.getElementById(contentId);
-    const statusText = toggleBtn.querySelector('.module-toggle-status');
-    const chevron = toggleBtn.querySelector('.module-chevron-icon');
-
-    if (shouldExpand) {
-      toggleBtn.setAttribute('aria-expanded', 'true');
-      toggleBtn.classList.add('is-open');
-      if (contentPanel) contentPanel.style.display = 'block';
-      if (statusText) statusText.textContent = 'Ocultar';
-      if (chevron) chevron.style.transform = 'rotate(180deg)';
-    } else {
-      toggleBtn.setAttribute('aria-expanded', 'false');
-      toggleBtn.classList.remove('is-open');
-      if (contentPanel) contentPanel.style.display = 'none';
-      if (statusText) statusText.textContent = 'Ver módulo';
-      if (chevron) chevron.style.transform = 'rotate(0deg)';
-    }
-  }
-
-  moduleToggles.forEach(toggleBtn => {
-    toggleBtn.addEventListener('click', () => {
-      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-      setModuleExpanded(toggleBtn, !isExpanded);
-    });
-  });
-
-  if (btnExpandAllModules) {
-    btnExpandAllModules.addEventListener('click', () => {
-      moduleToggles.forEach(btn => setModuleExpanded(btn, true));
-    });
-  }
-
-  if (btnCollapseAllModules) {
-    btnCollapseAllModules.addEventListener('click', () => {
-      moduleToggles.forEach(btn => setModuleExpanded(btn, false));
     });
   }
 
@@ -633,23 +587,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Pantalla 2: Resolución
+  // Pantalla 3: Resolución
   if (btnChangeCase) {
     btnChangeCase.addEventListener('click', () => {
-      goToScreen(1);
+      goToScreen(2);
     });
   }
 
   if (btnBackToCaseSelect) {
     btnBackToCaseSelect.addEventListener('click', () => {
-      goToScreen(1);
+      goToScreen(2);
     });
   }
 
   if (btnSubmitResolution) {
     btnSubmitResolution.addEventListener('click', () => {
       saveCurrentState();
-      goToScreen(3);
+      goToScreen(4);
     });
   }
 
