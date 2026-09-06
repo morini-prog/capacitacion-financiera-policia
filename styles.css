@@ -2254,93 +2254,68 @@ body {
   border-radius: 0 8px 8px 0;
 }
 
-/* 7. CONTACTO DEL CAPACITADOR */
-.trainer-contact-section {
+/* Cierre y Crédito Institucional Minimalista */
+.site-closure-minimal {
+  margin-top: 2.25rem;
+  padding-top: 1.75rem;
   border-top: 1px solid var(--bna-celeste-border);
-  padding-top: 2rem;
-  margin-top: 1.5rem;
-}
-
-.trainer-contact-card {
-  background-color: #ffffff;
-  border: 1px solid var(--bna-celeste-border);
-  border-radius: var(--radius-box);
-  padding: 1.75rem 1.5rem;
   text-align: center;
-  box-shadow: 0 4px 14px rgba(0, 95, 134, 0.08);
 }
 
-.trainer-label {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--bna-blue-petrol);
-  margin-bottom: 0.4rem;
+.closure-quotes {
+  max-width: 680px;
+  margin: 0 auto 1.25rem auto;
 }
 
-.trainer-info-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  margin-bottom: 1.25rem;
-}
-
-.trainer-name {
-  font-size: 1.1875rem;
-  font-weight: 800;
-  color: var(--bna-blue-primary);
-}
-
-.trainer-sep {
-  color: var(--bna-celeste-border);
-}
-
-.trainer-email-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  color: var(--bna-blue-primary);
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 0.35rem 0.75rem;
-  border-radius: 8px;
-  background-color: var(--bna-celeste-light);
-  border: 1px solid var(--bna-celeste-border);
-  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
-}
-
-.trainer-email-link:hover, .trainer-email-link:focus-visible {
-  background-color: var(--bna-blue-petrol);
-  border-color: var(--bna-blue-petrol);
-  color: #ffffff;
-  outline: none;
-}
-
-.closure-reminder-line {
-  border-top: 1px solid #dce8ef;
-  padding-top: 1rem;
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.reminder-quote {
+.closure-quote-main {
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: #475569;
   line-height: 1.5;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
   font-style: italic;
 }
 
-.reminder-subquote {
+.closure-quote-sub {
   font-size: 0.9375rem;
   font-weight: 700;
   color: var(--bna-blue-primary);
   font-style: italic;
+}
+
+.trainer-minimal-credit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem 0.6rem;
+  font-size: 0.775rem;
+  color: #64748b;
+  letter-spacing: 0.01em;
+}
+
+.trainer-minimal-credit strong {
+  color: #334155;
+  font-weight: 600;
+}
+
+.credit-dot {
+  color: #94a3b8;
+}
+
+.trainer-minimal-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--bna-blue-petrol);
+  text-decoration: none;
+  font-size: 0.775rem;
+  transition: color 0.15s, text-decoration 0.15s;
+}
+
+.trainer-minimal-email:hover, .trainer-minimal-email:focus-visible {
+  color: var(--bna-blue-primary);
+  text-decoration: underline;
+  outline: none;
 }
 
 /* --- MODALES --- */
