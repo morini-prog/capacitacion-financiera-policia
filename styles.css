@@ -2118,6 +2118,10 @@ body {
   .help-channels-grid {
     grid-template-columns: 1fr 1fr;
   }
+  
+  .channel-card-wide {
+    grid-column: 1 / -1;
+  }
 }
 
 .channel-card {
