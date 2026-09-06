@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '¿Cómo podemos acompañar a un compañero sin juzgarlo ni prestarle dinero que prolongue el problema?'
   ];
 
-  const STORAGE_KEY = 'capacitacion_policia_cba_v2';
+  const STORAGE_KEY = 'capacitacion_policia_cba_v3';
   const TOTAL_WORKSHOP_SECONDS = 30 * 60; // 30 minutos
 
   // ==========================================
@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   function goToScreen(step) {
     if (step < 1) step = 1;
-    if (step > 4) step = 4;
+    if (step > 3) step = 3;
 
     state.currentScreen = step;
     saveCurrentState();
@@ -313,12 +313,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Acciones específicas por pantalla
-    if (step === 2) {
+    if (step === 1) {
       highlightActiveCaseInGrid();
+    } else if (step === 2) {
+      renderScreen2Resolution();
     } else if (step === 3) {
-      renderScreen3Resolution();
-    } else if (step === 4) {
-      renderScreen4Devolucion();
+      renderScreen3Devolucion();
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -340,14 +340,15 @@ document.addEventListener('DOMContentLoaded', () => {
   function selectCase(caseId) {
     if (!CASES_DATA[caseId]) return;
     state.assignedCaseId = caseId;
+    startTimer();
     saveCurrentState();
-    goToScreen(3);
+    goToScreen(2);
   }
 
   // ==========================================
-  // 6. RENDERIZADO DE PANTALLAS 3 Y 4
+  // 6. RENDERIZADO DE PANTALLAS 2 Y 3
   // ==========================================
-  function renderScreen3Resolution() {
+  function renderScreen2Resolution() {
     if (!state.assignedCaseId || !CASES_DATA[state.assignedCaseId]) {
       // Si por alguna razón no hay caso asignado, default a caso 1
       state.assignedCaseId = 1;
@@ -372,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
     restoreFormAnswers();
   }
 
-  function renderScreen4Devolucion() {
+  function renderScreen3Devolucion() {
     const cData = CASES_DATA[state.assignedCaseId] || CASES_DATA[1];
 
     let html = `
@@ -549,7 +550,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (btnEditAnswers) {
     btnEditAnswers.addEventListener('click', () => {
-      goToScreen(3);
+      goToScreen(2);
     });
   }
 
@@ -632,23 +633,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Pantalla 3: Resolución
+  // Pantalla 2: Resolución
   if (btnChangeCase) {
     btnChangeCase.addEventListener('click', () => {
-      goToScreen(2);
+      goToScreen(1);
     });
   }
 
   if (btnBackToCaseSelect) {
     btnBackToCaseSelect.addEventListener('click', () => {
-      goToScreen(2);
+      goToScreen(1);
     });
   }
 
   if (btnSubmitResolution) {
     btnSubmitResolution.addEventListener('click', () => {
       saveCurrentState();
-      goToScreen(4);
+      goToScreen(3);
     });
   }
 

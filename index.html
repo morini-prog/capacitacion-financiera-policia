@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Educación Financiera y Apuestas Online · Capacitación</title>
   <meta name="description" content="Taller interactivo de análisis de casos sobre educación financiera y apuestas online para personal policial de la Provincia de Córdoba.">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260906_3">
 </head>
 <body>
   <!-- Contenedor principal de la aplicación -->
@@ -25,7 +25,7 @@
               <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
               <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
             </svg>
-            <span>Conceptos</span>
+            <span class="desktop-only">Conceptos</span>
           </button>
 
           <button type="button" class="btn-utility btn-utility-hint" id="btnOpenClue" aria-haspopup="dialog" aria-controls="modalClue">
@@ -60,7 +60,7 @@
             Lean y analicen la situación.
           </div>
           <div class="step-indicator-wrapper" id="stepIndicator">
-            Paso <span id="currentStepNum">1</span> de 4
+            Paso <span id="currentStepNum">1</span> de 3
           </div>
         </div>
         <div class="timer-progress-track" role="progressbar" aria-label="Tiempo transcurrido del taller" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="timerProgressTrack">
@@ -95,71 +95,55 @@
         </div>
       </aside>
 
-      <!-- ================= PANTALLA 1: INICIO Y ORGANIZACIÓN ================= -->
+      <!-- ================= PANTALLA 1: MARCO CONCEPTUAL Y ELECCIÓN DE CASO ================= -->
       <section class="screen-view active" id="screen-1" data-screen="1" aria-labelledby="title-screen-1">
-        <div class="card-hero">
-          <span class="tag-category">Capacitación Provincial · Policía de Córdoba</span>
-          <h2 class="title-primary" id="title-screen-1">EDUCACIÓN FINANCIERA Y APUESTAS ONLINE</h2>
-          <p class="subtitle-primary">Trabajo grupal en equipos de 3 o 4 personas · 30 minutos</p>
-
-          <div class="quote-box-purpose">
-            <div class="quote-icon" aria-hidden="true">“</div>
-            <p class="quote-text">
-              El objetivo no es encontrar una respuesta única ni juzgar las conductas de las personas.<br>
-              El propósito es analizar una situación cotidiana real, escuchar distintas miradas del equipo y reconocer cómo determinadas decisiones abren o cierran el margen de acción de una persona y su familia.
-            </p>
-          </div>
-
-          <!-- Roles sugeridos en el equipo -->
-          <div class="roles-grid" style="margin: 1.5rem 0 1rem;">
-            <article class="role-card">
-              <div class="role-header">
-                <div class="role-badge">Rol 1</div>
-                <h3 class="role-title">COORDINADOR/A</h3>
-              </div>
-              <p class="role-desc">
-                Organiza los tiempos del grupo (30 min) y procura que todos los integrantes tengan oportunidad de participar y debatir.
-              </p>
-            </article>
-
-            <article class="role-card">
-              <div class="role-header">
-                <div class="role-badge">Rol 2</div>
-                <h3 class="role-title">QUIEN TOMA NOTA</h3>
-              </div>
-              <p class="role-desc">
-                Registra las respuestas acordadas en la pantalla y compartirá las conclusiones del grupo durante la puesta en común.
-              </p>
-            </article>
-          </div>
-
-          <div class="methodology-pill-banner">
-            <span class="pill-item">PARAR</span>
-            <span class="pill-divider">·</span>
-            <span class="pill-item">MIRAR</span>
-            <span class="pill-divider">·</span>
-            <span class="pill-item">DECIDIR</span>
-          </div>
-
-          <div class="screen-action-center">
-            <button type="button" class="btn btn-primary btn-large" id="btnStartWorkshop">
-              COMENZAR Y ELEGIR CASO
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= PANTALLA 2: SELECCIÓN DE CASO ================= -->
-      <section class="screen-view" id="screen-2" data-screen="2" aria-labelledby="title-screen-2">
         <div class="content-panel">
-          <!-- ENCABEZADO DE PANTALLA 2 -->
-          <header class="panel-header">
-            <span class="panel-kicker">Paso 2 · Marco Teórico y Asignación de Caso</span>
-            <h2 class="panel-title" id="title-screen-2">CONCEPTOS CLAVE Y ELECCIÓN DEL CASO</h2>
-            <p class="panel-description">
-              Consulten los conceptos y herramientas teóricas organizados por módulos. Hagan clic en cada botón para desplegar u ocultar los textos y criterios de análisis antes de resolver el caso:
-            </p>
-          </header>
+
+          <!-- CABECERA INSTITUCIONAL Y ROLES -->
+          <div class="card-hero" style="border: none; box-shadow: none; padding: 0 0 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--bna-celeste-border);">
+            <span class="tag-category">Capacitación Provincial · Policía de Córdoba</span>
+            <h2 class="title-primary" id="title-screen-1">EDUCACIÓN FINANCIERA Y APUESTAS ONLINE</h2>
+            <p class="subtitle-primary">Trabajo grupal en equipos de 3 o 4 personas · 30 minutos</p>
+
+            <div class="quote-box-purpose" style="margin: 1.25rem 0;">
+              <div class="quote-icon" aria-hidden="true">“</div>
+              <p class="quote-text">
+                El objetivo no es encontrar una respuesta única ni juzgar las conductas de las personas.<br>
+                El propósito es analizar una situación cotidiana real, escuchar distintas miradas del equipo y reconocer cómo determinadas decisiones abren o cierran el margen de acción de una persona y su familia.
+              </p>
+            </div>
+
+            <!-- Roles sugeridos en el equipo -->
+            <div class="roles-grid" style="margin: 1rem 0;">
+              <article class="role-card">
+                <div class="role-header">
+                  <div class="role-badge">Rol 1</div>
+                  <h3 class="role-title">COORDINADOR/A</h3>
+                </div>
+                <p class="role-desc">
+                  Organiza los tiempos del grupo (30 min) y procura que todos los integrantes participen y debatan.
+                </p>
+              </article>
+
+              <article class="role-card">
+                <div class="role-header">
+                  <div class="role-badge">Rol 2</div>
+                  <h3 class="role-title">QUIEN TOMA NOTA</h3>
+                </div>
+                <p class="role-desc">
+                  Registra las respuestas del grupo en la pantalla y compartirá las conclusiones en la puesta en común.
+                </p>
+              </article>
+            </div>
+
+            <div class="methodology-pill-banner" style="margin-top: 0.75rem;">
+              <span class="pill-item">PARAR</span>
+              <span class="pill-divider">·</span>
+              <span class="pill-item">MIRAR</span>
+              <span class="pill-divider">·</span>
+              <span class="pill-item">DECIDIR</span>
+            </div>
+          </div>
 
           <!-- SECCIÓN DE MÓDULOS TEÓRICOS DESPLEGABLES (ENCIMA DE LA ASIGNACIÓN DEL CASO) -->
           <div class="concepts-accordion-section" id="conceptsAccordionSection">
@@ -617,15 +601,11 @@
               </div>
             </article>
           </div>
-
-          <nav class="screen-nav" style="margin-top: 1.5rem;">
-            <button type="button" class="btn btn-outline" id="btnBackToStart">Volver a inicio</button>
-          </nav>
         </div>
       </section>
 
-      <!-- ================= PANTALLA 3: RESOLUCIÓN EN PANTALLA ÚNICA ================= -->
-      <section class="screen-view" id="screen-3" data-screen="3" aria-labelledby="title-screen-3">
+      <!-- ================= PANTALLA 2: RESOLUCIÓN EN PANTALLA ÚNICA ================= -->
+      <section class="screen-view" id="screen-2" data-screen="2" aria-labelledby="title-screen-2">
         <div class="content-panel resolution-panel">
           <!-- Tarjeta del caso seleccionado -->
           <article class="case-full-card" id="resolutionCaseContainer">
@@ -764,12 +744,12 @@
         </div>
       </section>
 
-      <!-- ================= PANTALLA 4: DEVOLUCIÓN Y SÍNTESIS ================= -->
-      <section class="screen-view" id="screen-4" data-screen="4" aria-labelledby="title-screen-4">
+      <!-- ================= PANTALLA 3: DEVOLUCIÓN Y SÍNTESIS ================= -->
+      <section class="screen-view" id="screen-3" data-screen="3" aria-labelledby="title-screen-3">
         <div class="content-panel conclusion-panel">
           <header class="devolucion-header-block">
-            <span class="panel-kicker">Paso 4 · Síntesis completada</span>
-            <h2 class="panel-title" id="title-screen-4">DEVOLUCIÓN Y SÍNTESIS GRUPAL</h2>
+            <span class="panel-kicker">Paso 3 · Síntesis completada</span>
+            <h2 class="panel-title" id="title-screen-3">DEVOLUCIÓN Y SÍNTESIS GRUPAL</h2>
             <p class="panel-description">
               A continuación se presenta el informe consolidado con el caso analizado y las respuestas redactadas por el equipo, junto a los 4 ejes teóricos de cierre y los recursos oficiales de apoyo.
             </p>
@@ -1820,6 +1800,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20260906_3"></script>
 </body>
 </html>
