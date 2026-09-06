@@ -2110,8 +2110,9 @@ body {
 .help-channels-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.25rem;
   margin-bottom: 1.5rem;
+  align-items: stretch;
 }
 
 @media (min-width: 640px) {
@@ -2131,7 +2132,9 @@ body {
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  height: 100%;
+  box-sizing: border-box;
   box-shadow: 0 2px 8px rgba(0, 95, 134, 0.05);
 }
 
@@ -2156,6 +2159,11 @@ body {
   border-radius: 12px;
   padding: 0.85rem;
   margin-bottom: 0.85rem;
+  min-height: 92px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .phone-link {
@@ -2185,6 +2193,23 @@ body {
   font-size: 0.8125rem;
   color: var(--text-secondary);
   margin-bottom: 0.85rem;
+  line-height: 1.45;
+}
+
+.channel-actions {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.channel-actions .btn-resource {
+  width: 100%;
+  min-height: 48px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Apartado: Si te preocupa un compañero */
