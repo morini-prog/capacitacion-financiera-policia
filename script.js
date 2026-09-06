@@ -1,6 +1,11 @@
 /**
  * CAPACITACIÓN INSTITUCIONAL: EDUCACIÓN FINANCIERA Y APUESTAS ONLINE
  * Plataforma interactiva de trabajo grupal para personal policial de Córdoba
+ * Flujo simplificado de 4 pasos:
+ * 1. Bienvenida y organización
+ * 2. Elección activa del caso
+ * 3. Análisis y resolución en pantalla única (5 consignas clave)
+ * 4. Devolución y síntesis grupal con exportación
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       number: 'CASO 1',
       title: 'TODO ENTRA EN LA CUOTA',
       subtitle: 'Financiamiento continuo y gastos imprevistos.',
+      summary: 'Sebastián (34 años) acumula cuotas en 9 y 12 meses más un préstamo personal. Ante la rotura del auto familiar, evalúa pedir un crédito exprés por app fijándose solo si la cuota mensual "entra" en su bolsillo, sin calcular sus ingresos futuros ya comprometidos.',
       paragraphs: [
         'Sebastián tiene 34 años, vive con su pareja y dos hijos. Entre ambos sostienen los gastos de la casa. Él tiene un ingreso mensual relativamente estable y suele hacer algunas horas adicionales, aunque no todos los meses cobra exactamente lo mismo. No lleva un presupuesto escrito: conoce aproximadamente cuánto gasta y, hasta ahora, siente que “se va acomodando”.',
         'En los últimos ocho meses cambió el teléfono en 12 cuotas, compró un televisor en 9 cuotas y financió parte de unas vacaciones familiares. Ninguna cuota, tomada por separado, le pareció excesiva. Además paga un préstamo personal que había pedido para arreglar el auto. A principio de mes, después de cobrar, todavía siente que tiene dinero disponible; el problema aparece hacia la tercera semana, cuando buena parte del ingreso ya está comprometida.',
@@ -26,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       number: 'CASO 2',
       title: 'EL RESUMEN QUE NUNCA TERMINA',
       subtitle: 'Uso de tarjeta de crédito y pago mínimo.',
+      summary: 'Verónica, habitualmente ordenada, pagó el saldo mínimo de su tarjeta tras imprevistos familiares. Los intereses crecieron en espiral y ahora duda entre refinanciar con el banco o sacar un nuevo préstamo para cancelar todo, sin conocer las tasas ni el CFT.',
       paragraphs: [
         'Verónica tiene ingresos regulares y siempre se consideró ordenada con el dinero. Nunca dejó de pagar una obligación y le preocupa especialmente “no quedar debiendo”. Durante algunos meses utilizó la tarjeta para supermercado, combustible, medicamentos y algunas compras personales. También aprovechó promociones en cuotas sin interés. Al principio pagaba el resumen completo.',
         'Después de dos meses con gastos familiares inesperados, el resumen llegó bastante más alto. Para no quedarse sin efectivo decidió pagar el mínimo. Pensó que sería solamente por un mes. Al siguiente, además del consumo nuevo, apareció el saldo financiado y los intereses. Volvió a pagar una parte. Desde entonces mira principalmente cuánto necesita pagar ese mes y no cuánto debe en total.',
@@ -38,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       number: 'CASO 3',
       title: 'UNA MÁS Y RECUPERO',
       subtitle: 'Apuestas deportivas individuales e ilusión de control.',
+      summary: 'Nicolás empezó apostando en fútbol por diversión creyendo tener ventaja por sus conocimientos. Tras pérdidas de $20.000 y $45.000, decide arriesgar una suma mayor para "recuperar", usando fondos originalmente destinados a gastos del hogar.',
       paragraphs: [
         'Nicolás siempre siguió fútbol y conoce estadísticas, jugadores y equipos. Empezó a apostar con amigos durante algunos partidos importantes. Eran montos pequeños y la apuesta agregaba emoción al encuentro.',
         'Algunas veces ganó. Esas victorias le dejaron la sensación de que, prestando atención y eligiendo bien, podía obtener una ventaja.',
@@ -51,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
       number: 'CASO 4',
       title: '¿ME METO O NO ME METO?',
       subtitle: 'Señales en el ámbito laboral y dilema entre pares.',
+      summary: 'Martín pasa las guardias apostando de madrugada en su celular, llega exhausto al servicio y pide dinero prestado a camaradas para tapar pérdidas. El grupo nota el deterioro pero discute si intervenir y ofrecer ayuda o si sería invadir su intimidad.',
       paragraphs: [
         'En un grupo de compañeros, Martín empezó hace tiempo a apostar online por entretenimiento. Al principio comentaba sus jugadas abiertamente y se reía tanto de las ganancias como de las pérdidas. En los últimos meses algo cambió. Durante los descansos revisa resultados y cuotas con frecuencia. Algunas mañanas llega cansado porque se quedó siguiendo eventos deportivos de madrugada. También comenzó a hablar de “recuperar” dinero perdido.',
         'Dos compañeros notan otras situaciones. Una vez Martín pidió dinero prestado hasta el día de cobro. Lo devolvió puntualmente y nadie preguntó demasiado. Semanas después volvió a pedir. En una conversación reconoció que había perdido bastante el fin de semana, pero enseguida aclaró que ya tenía pensado cómo recuperarlo. Cuando otro compañero hizo una broma sobre que estaba “enviciado”, Martín se enojó y desde entonces casi no habla de cuánto juega.',
@@ -59,6 +68,39 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     }
   };
+
+  const QUESTIONS_DATA = [
+    {
+      id: 'answer_q1',
+      number: 'Pregunta 1',
+      title: 'Diagnóstico de la situación',
+      prompt: '¿Cuáles son las principales señales de alerta y el error de apreciación o ilusión de control que comete el protagonista?'
+    },
+    {
+      id: 'answer_q2',
+      number: 'Pregunta 2',
+      title: 'Impacto y consecuencias',
+      prompt: '¿Qué consecuencias inmediatas y futuras puede tener esta decisión sobre su economía familiar, su bienestar emocional y su función policial?'
+    },
+    {
+      id: 'answer_q3',
+      number: 'Pregunta 3',
+      title: 'Plan de contención: FRENAR y ORDENAR',
+      prompt: '¿Qué medidas concretas y urgentes debería tomar la persona hoy mismo para detener el desfasaje y comenzar a ordenar sus números?'
+    },
+    {
+      id: 'answer_q4',
+      number: 'Pregunta 4',
+      title: 'Red de apoyo y camaradería: PEDIR AYUDA',
+      prompt: '¿A qué canales oficiales o asesoramiento legal y profesional recomendarían recurrir, y cómo debería actuar el grupo de camaradas para acompañar sin juzgar?'
+    },
+    {
+      id: 'answer_q5',
+      number: 'Pregunta 5',
+      title: 'Criterio de discernimiento personal',
+      prompt: 'Pensando en la propia vida cotidiana de ustedes, ¿qué aprendizaje o regla práctica les deja este caso para la prevención financiera familiar?'
+    }
+  ];
 
   const CLUES_LIST = [
     '¿Qué ingreso futuro ya está comprometido por las cuotas y compromisos previos?',
@@ -73,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '¿Cómo podemos acompañar a un compañero sin juzgarlo ni prestarle dinero que prolongue el problema?'
   ];
 
-  const STORAGE_KEY = 'capacitacion_policia_cba_v1';
+  const STORAGE_KEY = 'capacitacion_policia_cba_v2';
   const TOTAL_WORKSHOP_SECONDS = 30 * 60; // 30 minutos
 
   // ==========================================
@@ -84,8 +126,13 @@ document.addEventListener('DOMContentLoaded', () => {
     assignedCaseId: null,
     timerStarted: false,
     timerStartTimestamp: null,
-    timerElapsedSeconds: 0,
-    answers: {}
+    answers: {
+      answer_q1: '',
+      answer_q2: '',
+      answer_q3: '',
+      answer_q4: '',
+      answer_q5: ''
+    }
   };
 
   function loadSavedState() {
@@ -93,7 +140,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
-        state = { ...state, ...parsed };
+        state = {
+          ...state,
+          ...parsed,
+          answers: { ...state.answers, ...(parsed.answers || {}) }
+        };
       }
     } catch (e) {
       console.warn('No se pudo cargar localStorage:', e);
@@ -108,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Cargar estado guardado al arrancar
   loadSavedState();
 
   // ==========================================
@@ -124,37 +174,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // Pantalla 1
   const btnStartWorkshop = document.getElementById('btnStartWorkshop');
 
+  // Pantalla 2
+  const caseSelectCards = document.querySelectorAll('.case-select-card');
+  const btnSelectCaseList = document.querySelectorAll('.btn-select-case');
+  const btnBackToStart = document.getElementById('btnBackToStart');
+
   // Pantalla 3
-  const btnAssignCase = document.getElementById('btnAssignCase');
-  const assignmentActionBox = document.getElementById('assignmentActionBox');
-  const assignmentResultBox = document.getElementById('assignmentResultBox');
-  const assignedCaseTitle = document.getElementById('assignedCaseTitle');
-  const btnGoToCaseReading = document.getElementById('btnGoToCaseReading');
-  const casePreviews = document.querySelectorAll('.case-card-preview');
+  const resCaseBadge = document.getElementById('resCaseBadge');
+  const resCaseTitle = document.getElementById('resCaseTitle');
+  const resCaseSubtitle = document.getElementById('resCaseSubtitle');
+  const resCaseNarrative = document.getElementById('resCaseNarrative');
+  const btnChangeCase = document.getElementById('btnChangeCase');
+  const btnBackToCaseSelect = document.getElementById('btnBackToCaseSelect');
+  const btnSubmitResolution = document.getElementById('btnSubmitResolution');
 
   // Pantalla 4
-  const readingCaseKicker = document.getElementById('readingCaseKicker');
-  const readingCaseTitle = document.getElementById('title-screen-4');
-  const caseNarrativeContainer = document.getElementById('caseNarrativeContainer');
-
-  // Banner superior del caso en análisis (pantallas 5 a 10)
-  const activeCaseTopBanner = document.getElementById('activeCaseTopBanner');
-  const topActiveCaseTitle = document.getElementById('topActiveCaseTitle');
-  const topActiveCaseNarrative = document.getElementById('topActiveCaseNarrative');
-  const btnToggleActiveCase = document.getElementById('btnToggleActiveCase');
-  const toggleActiveCaseLabel = document.getElementById('toggleActiveCaseLabel');
-  const toggleCaseIcon = document.getElementById('toggleCaseIcon');
-  const topActiveCaseBody = document.getElementById('topActiveCaseBody');
-
-  // Pantalla 8
-  const riskCycleCard = document.getElementById('riskCycleCard');
-
-  // Pantalla 11
-  const btnFinalizeWorkshop = document.getElementById('btnFinalizeWorkshop');
-  const closureActionsArea = document.getElementById('closureActionsArea');
-  const teamSummaryDrawer = document.getElementById('teamSummaryDrawer');
-  const summaryContentContainer = document.getElementById('summaryContentContainer');
-  const btnPrintSummary = document.getElementById('btnPrintSummary');
+  const devolucionReportContainer = document.getElementById('devolucionReportContainer');
+  const btnCopyReport = document.getElementById('btnCopyReport');
+  const btnCopyReportText = document.getElementById('btnCopyReportText');
+  const btnPrintReport = document.getElementById('btnPrintReport');
+  const btnEditAnswers = document.getElementById('btnEditAnswers');
 
   // Modales
   const modalClue = document.getElementById('modalClue');
@@ -175,9 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnAbortReset = document.getElementById('btnAbortReset');
   const btnConfirmReset = document.getElementById('btnConfirmReset');
 
-  // Campos de formulario para autosave
-  const formInputs = document.querySelectorAll('input[type="text"], textarea');
-
   // ==========================================
   // 4. CRONÓMETRO DE 30 MINUTOS
   // ==========================================
@@ -190,26 +226,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateTimerUI(remainingSeconds) {
+    if (!timerClock) return;
     timerClock.textContent = formatTime(remainingSeconds);
 
     const percentElapsed = Math.min(100, Math.max(0, ((TOTAL_WORKSHOP_SECONDS - remainingSeconds) / TOTAL_WORKSHOP_SECONDS) * 100));
-    timerProgressBar.style.width = `${percentElapsed}%`;
+    if (timerProgressBar) {
+      timerProgressBar.style.width = `${percentElapsed}%`;
+    }
 
-    // Mensajes pedagógicos según tiempo restante:
-    // 30 a 20 min (1800 a 1200 seg): "Lean y analicen la situación."
-    // 20 a 10 min (1200 a 600 seg): "Construyan alternativas y analicen consecuencias."
-    // Últimos 5 min (300 a 0 seg): "Preparen la idea que van a compartir."
-    // 0 min: "El tiempo de trabajo terminó. Finalicen la idea que compartirán en la puesta en común."
+    if (!timerGuideMessage) return;
     if (remainingSeconds > 1200) {
-      timerGuideMessage.textContent = 'Lean y analicen la situación.';
+      timerGuideMessage.textContent = 'Lean y debatan el caso en equipo.';
     } else if (remainingSeconds > 600) {
-      timerGuideMessage.textContent = 'Construyan alternativas y analicen consecuencias.';
+      timerGuideMessage.textContent = 'Registren respuestas y evalúen consecuencias.';
     } else if (remainingSeconds > 300) {
-      timerGuideMessage.textContent = 'Continúen evaluando opciones y consecuencias.';
+      timerGuideMessage.textContent = 'Continúen respondiendo las consignas clave.';
     } else if (remainingSeconds > 0) {
-      timerGuideMessage.textContent = 'Preparen la idea que van a compartir.';
+      timerGuideMessage.textContent = 'Preparen las conclusiones para enviar la resolución.';
     } else {
-      timerGuideMessage.textContent = 'El tiempo de trabajo terminó. Finalicen la idea que compartirán en la puesta en común.';
+      timerGuideMessage.textContent = 'Tiempo concluido. Finalicen sus respuestas y envíen para ver la devolución.';
     }
   }
 
@@ -230,11 +265,10 @@ document.addEventListener('DOMContentLoaded', () => {
       saveCurrentState();
     }
 
-    timerWrapper.style.display = 'block';
+    if (timerWrapper) timerWrapper.style.display = 'block';
 
     if (timerInterval) clearInterval(timerInterval);
 
-    // Actualización inmediata
     const currentRemaining = calculateRemainingSeconds();
     updateTimerUI(currentRemaining);
 
@@ -242,7 +276,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const remaining = calculateRemainingSeconds();
       updateTimerUI(remaining);
       if (remaining <= 0) {
-        // No bloquear la actividad, mantener mensaje orientativo sereno
         clearInterval(timerInterval);
         timerInterval = null;
       }
@@ -254,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   function goToScreen(step) {
     if (step < 1) step = 1;
-    if (step > 11) step = 11;
+    if (step > 4) step = 4;
 
     state.currentScreen = step;
     saveCurrentState();
@@ -268,232 +301,132 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    currentStepNum.textContent = step;
+    if (currentStepNum) currentStepNum.textContent = step;
 
     // Mostrar cabecera del timer a partir del paso 2 o si ya fue iniciado
-    if (step > 1 || state.timerStarted) {
-      timerWrapper.style.display = 'block';
-    } else {
-      timerWrapper.style.display = 'none';
+    if (timerWrapper) {
+      if (step > 1 || state.timerStarted) {
+        timerWrapper.style.display = 'block';
+      } else {
+        timerWrapper.style.display = 'none';
+      }
     }
 
-    // Comportamientos específicos por pantalla
-    if (step === 3) {
-      renderScreen3Assignment();
+    // Acciones específicas por pantalla
+    if (step === 2) {
+      highlightActiveCaseInGrid();
+    } else if (step === 3) {
+      renderScreen3Resolution();
     } else if (step === 4) {
-      renderScreen4Reading();
-    } else if (step === 8) {
-      renderScreen8RiskCycle();
-    } else if (step === 11) {
-      renderScreen11Summary();
+      renderScreen4Devolucion();
     }
 
-    // Actualizar visibilidad del banner del caso en pantallas de preguntas
-    renderActiveCaseTopBanner();
-
-    // Scroll al inicio del contenido
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Asignar caso aleatoriamente
-  function assignRandomCase() {
-    // Si ya hay un caso asignado, se puede mantener o reasignar
-    const randomCaseNum = Math.floor(Math.random() * 4) + 1;
-    state.assignedCaseId = randomCaseNum;
-    saveCurrentState();
-
-    // Animación visual institucional y seria (resaltado pausado y deliberado)
-    btnAssignCase.disabled = true;
-    btnAssignCase.textContent = 'Asignando caso...';
-
-    let counter = 0;
-    const highlightInterval = setInterval(() => {
-      casePreviews.forEach(card => card.classList.remove('selected', 'dimmed'));
-      const activeIdx = counter % 4;
-      casePreviews[activeIdx].classList.add('selected');
-      counter++;
-      if (counter > 6) {
-        clearInterval(highlightInterval);
-        finalizeAssignment(randomCaseNum);
-      }
-    }, 120);
-  }
-
-  function finalizeAssignment(caseId) {
-    btnAssignCase.disabled = false;
-    btnAssignCase.textContent = 'ASIGNAR CASO';
-
-    casePreviews.forEach((card, idx) => {
-      card.classList.remove('selected', 'dimmed');
-      if (idx + 1 === caseId) {
-        card.classList.add('selected');
+  // Resaltar el caso seleccionado en la grilla de selección
+  function highlightActiveCaseInGrid() {
+    caseSelectCards.forEach(card => {
+      const cardCaseId = parseInt(card.dataset.selectCase, 10);
+      if (state.assignedCaseId && cardCaseId === state.assignedCaseId) {
+        card.classList.add('is-selected-case');
       } else {
-        card.classList.add('dimmed');
+        card.classList.remove('is-selected-case');
       }
     });
-
-    const cData = CASES_DATA[caseId];
-    assignedCaseTitle.textContent = `${cData.number} — ${cData.title}`;
-    assignmentActionBox.style.display = 'none';
-    assignmentResultBox.style.display = 'block';
-    btnGoToCaseReading.style.display = 'inline-flex';
   }
 
-  function renderScreen3Assignment() {
-    if (state.assignedCaseId && CASES_DATA[state.assignedCaseId]) {
-      finalizeAssignment(state.assignedCaseId);
-    } else {
-      casePreviews.forEach(card => card.classList.remove('selected', 'dimmed'));
-      assignmentActionBox.style.display = 'block';
-      assignmentResultBox.style.display = 'none';
-      btnGoToCaseReading.style.display = 'none';
-    }
+  // Seleccionar caso activo
+  function selectCase(caseId) {
+    if (!CASES_DATA[caseId]) return;
+    state.assignedCaseId = caseId;
+    saveCurrentState();
+    goToScreen(3);
   }
 
-  function renderScreen4Reading() {
-    // Si por algún motivo aún no hay caso asignado, asignar uno por defecto
-    if (!state.assignedCaseId) {
-      state.assignedCaseId = Math.floor(Math.random() * 4) + 1;
+  // ==========================================
+  // 6. RENDERIZADO DE PANTALLAS 3 Y 4
+  // ==========================================
+  function renderScreen3Resolution() {
+    if (!state.assignedCaseId || !CASES_DATA[state.assignedCaseId]) {
+      // Si por alguna razón no hay caso asignado, default a caso 1
+      state.assignedCaseId = 1;
       saveCurrentState();
     }
 
     const cData = CASES_DATA[state.assignedCaseId];
-    readingCaseKicker.textContent = `CASO ASIGNADO · ${cData.number}`;
-    readingCaseTitle.textContent = `${cData.number} — ${cData.title}`;
 
-    caseNarrativeContainer.innerHTML = '';
-    cData.paragraphs.forEach(pText => {
-      const p = document.createElement('p');
-      p.textContent = pText;
-      caseNarrativeContainer.appendChild(p);
-    });
-  }
+    if (resCaseBadge) resCaseBadge.textContent = `${cData.number} SELECCIONADO`;
+    if (resCaseTitle) resCaseTitle.textContent = `${cData.number} — ${cData.title}`;
+    if (resCaseSubtitle) resCaseSubtitle.textContent = cData.subtitle;
 
-  function renderActiveCaseTopBanner() {
-    const isQuestionScreen = state.currentScreen >= 5 && state.currentScreen <= 10;
-    if (!isQuestionScreen || !state.assignedCaseId) {
-      if (activeCaseTopBanner) activeCaseTopBanner.style.display = 'none';
-      return;
+    if (resCaseNarrative) {
+      resCaseNarrative.innerHTML = '';
+      cData.paragraphs.forEach(pText => {
+        const p = document.createElement('p');
+        p.textContent = pText;
+        resCaseNarrative.appendChild(p);
+      });
     }
 
-    const cData = CASES_DATA[state.assignedCaseId];
-    if (!cData) return;
-
-    topActiveCaseTitle.textContent = `${cData.number} — ${cData.title}`;
-    topActiveCaseNarrative.innerHTML = '';
-    cData.paragraphs.forEach(pText => {
-      const p = document.createElement('p');
-      p.textContent = pText;
-      topActiveCaseNarrative.appendChild(p);
-    });
-
-    activeCaseTopBanner.style.display = 'block';
+    restoreFormAnswers();
   }
 
-  let isCaseBannerExpanded = true;
-  if (btnToggleActiveCase) {
-    btnToggleActiveCase.addEventListener('click', () => {
-      isCaseBannerExpanded = !isCaseBannerExpanded;
-      if (isCaseBannerExpanded) {
-        topActiveCaseBody.style.display = 'block';
-        toggleActiveCaseLabel.textContent = 'Ocultar relato';
-        btnToggleActiveCase.setAttribute('aria-expanded', 'true');
-        toggleCaseIcon.style.transform = 'rotate(0deg)';
-      } else {
-        topActiveCaseBody.style.display = 'none';
-        toggleActiveCaseLabel.textContent = 'Ver relato';
-        btnToggleActiveCase.setAttribute('aria-expanded', 'false');
-        toggleCaseIcon.style.transform = 'rotate(180deg)';
-      }
-    });
-  }
-
-  function renderScreen8RiskCycle() {
-    // Casos 3 y 4 tratan sobre apuestas: mostrar tarjeta conceptual de dinámica de pérdidas
-    if (state.assignedCaseId === 3 || state.assignedCaseId === 4) {
-      riskCycleCard.style.display = 'block';
-    } else {
-      riskCycleCard.style.display = 'none';
-    }
-  }
-
-  function renderScreen11Summary() {
-    // La pantalla 11 muestra el mensaje de cierre y permite consultar el resumen al pulsar finalizar
-    if (state.finishedWorkshop) {
-      showSummaryDrawer();
-    }
-  }
-
-  function showSummaryDrawer() {
-    state.finishedWorkshop = true;
-    saveCurrentState();
-
+  function renderScreen4Devolucion() {
     const cData = CASES_DATA[state.assignedCaseId] || CASES_DATA[1];
-    
+
     let html = `
-      <div class="summary-block">
-        <div class="summary-block-title">Caso analizado por el equipo</div>
-        <div class="summary-block-text"><strong>${cData.number} — ${cData.title}</strong></div>
+      <div class="report-meta-header">
+        <div class="report-badge-row">
+          <span class="badge-assigned">${cData.number}</span>
+          <span class="report-date-badge">Capacitación Institucional Policial</span>
+        </div>
+        <h3 class="report-case-title">${cData.number} — ${cData.title}</h3>
+        <p class="report-case-subtitle">${cData.subtitle}</p>
       </div>
-      <div class="summary-block">
-        <div class="summary-block-title">PARAR: Momentos de inflexión identificados</div>
-        <div class="summary-block-text">${escapeHtml(state.answers['input_p1_momentos'] || '— Sin registro')}</div>
-      </div>
-      <div class="summary-block">
-        <div class="summary-block-title">PARAR: ¿Por qué eligieron esos momentos?</div>
-        <div class="summary-block-text">${escapeHtml(state.answers['input_p1_porque'] || '— Sin registro')}</div>
-      </div>
-      <div class="summary-block">
-        <div class="summary-block-title">PARAR: Señales o situaciones llamativas</div>
-        <div class="summary-block-text">${escapeHtml(state.answers['input_p1_senales'] || '— Sin registro')}</div>
-      </div>
-      <div class="summary-block">
-        <div class="summary-block-title">MIRAR: Información faltante</div>
-        <div class="summary-block-text">${escapeHtml(state.answers['input_p2_faltante'] || '— Sin registro')}</div>
-      </div>
-      <div class="summary-block">
-        <div class="summary-block-title">MIRAR: ¿Qué sería importante conocer antes de aconsejar?</div>
-        <div class="summary-block-text">${escapeHtml(state.answers['input_p2_conocer'] || '— Sin registro')}</div>
-      </div>
-      <div class="summary-block">
-        <div class="summary-block-title">DECIDIR: Alternativas evaluadas</div>
-        <div class="summary-block-text">
-          <strong>Opción A:</strong> ${escapeHtml(state.answers['input_optA_desc'] || 'No completada')}<br>
-          <em>Inmediato:</em> ${escapeHtml(state.answers['input_optA_inmediato'] || '—')}<br>
-          <em>Corto plazo:</em> ${escapeHtml(state.answers['input_optA_corto'] || '—')}<br>
-          <em>En meses:</em> ${escapeHtml(state.answers['input_optA_meses'] || '—')}<br><br>
-          <strong>Opción B:</strong> ${escapeHtml(state.answers['input_optB_desc'] || 'No completada')}<br>
-          <em>Inmediato:</em> ${escapeHtml(state.answers['input_optB_inmediato'] || '—')}<br>
-          <em>Corto plazo:</em> ${escapeHtml(state.answers['input_optB_corto'] || '—')}<br>
-          <em>En meses:</em> ${escapeHtml(state.answers['input_optB_meses'] || '—')}<br>
-          ${state.answers['input_optC_desc'] ? `
-          <br><strong>Opción C:</strong> ${escapeHtml(state.answers['input_optC_desc'])}<br>
-          <em>Inmediato:</em> ${escapeHtml(state.answers['input_optC_inmediato'] || '—')}<br>
-          <em>Corto plazo:</em> ${escapeHtml(state.answers['input_optC_corto'] || '—')}<br>
-          <em>En meses:</em> ${escapeHtml(state.answers['input_optC_meses'] || '—')}
-          ` : ''}
+
+      <div class="report-case-narrative-box">
+        <h4 class="report-box-label">Relato de la situación analizada:</h4>
+        <div class="report-narrative-text">
+          ${cData.paragraphs.map(p => `<p>${escapeHtml(p)}</p>`).join('')}
         </div>
       </div>
-      <div class="summary-block">
-        <div class="summary-block-title">Punto de inflexión: Momento para detenerse o pedir ayuda</div>
-        <div class="summary-block-text">${escapeHtml(state.answers['input_p4_senial_ayuda'] || '— Sin registro')}</div>
+
+      <div class="report-section-divider">
+        <h4 class="report-section-title">RESPUESTAS Y ANÁLISIS DEL EQUIPO DE TRABAJO</h4>
       </div>
-      <div class="summary-block">
-        <div class="summary-block-title">Si fuera un compañero cercano</div>
-        <div class="summary-block-text">
-          <strong>Qué haríamos:</strong> ${escapeHtml(state.answers['input_p5_que_harian'] || '— Sin registro')}<br><br>
-          <strong>Qué evitaríamos:</strong> ${escapeHtml(state.answers['input_p5_que_evitarian'] || '— Sin registro')}
-        </div>
-      </div>
-      <div class="summary-block" style="border: 2px solid var(--blue-primary); background-color: #ffffff;">
-        <div class="summary-block-title" style="color: var(--blue-primary); font-size: 0.9375rem; letter-spacing: 0.05em;">IDEA PRINCIPAL PARA LA PUESTA EN COMÚN</div>
-        <div class="summary-block-text" style="font-size: 1.0625rem; font-weight: 600;">${escapeHtml(state.answers['input_p6_idea_compartir'] || '— Sin registro')}</div>
+
+      <div class="report-qa-stack">
+    `;
+
+    QUESTIONS_DATA.forEach(q => {
+      const rawAns = (state.answers && state.answers[q.id]) ? state.answers[q.id].trim() : '';
+      const hasAns = rawAns.length > 0;
+
+      html += `
+        <article class="qa-response-card">
+          <div class="qa-card-header">
+            <span class="qa-number-badge">${q.number}</span>
+            <h5 class="qa-title">${escapeHtml(q.title)}</h5>
+          </div>
+          <p class="qa-prompt-text">${escapeHtml(q.prompt)}</p>
+          <div class="qa-answer-wrapper">
+            ${hasAns 
+              ? `<div class="qa-user-answer">${escapeHtml(rawAns)}</div>` 
+              : `<div class="qa-user-answer-empty">Sin respuesta registrada por el equipo.</div>`
+            }
+          </div>
+        </article>
+      `;
+    });
+
+    html += `
       </div>
     `;
 
-    summaryContentContainer.innerHTML = html;
-    teamSummaryDrawer.style.display = 'block';
-    closureActionsArea.style.display = 'none';
+    if (devolucionReportContainer) {
+      devolucionReportContainer.innerHTML = html;
+    }
   }
 
   function escapeHtml(str) {
@@ -507,66 +440,175 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 6. AUTOSAVE DE FORMULARIO
+  // 7. AUTOSAVE Y RESTAURACIÓN DE FORMULARIO
   // ==========================================
   function restoreFormAnswers() {
     if (!state.answers) state.answers = {};
-    formInputs.forEach(input => {
-      const fieldId = input.id;
-      if (state.answers[fieldId] !== undefined) {
-        input.value = state.answers[fieldId];
+    QUESTIONS_DATA.forEach(q => {
+      const textarea = document.getElementById(q.id);
+      if (textarea && state.answers[q.id] !== undefined) {
+        textarea.value = state.answers[q.id];
       }
     });
   }
 
-  formInputs.forEach(input => {
-    input.addEventListener('input', (e) => {
-      const fieldId = e.target.id;
-      if (!state.answers) state.answers = {};
-      state.answers[fieldId] = e.target.value;
+  QUESTIONS_DATA.forEach(q => {
+    const textarea = document.getElementById(q.id);
+    if (textarea) {
+      textarea.addEventListener('input', (e) => {
+        if (!state.answers) state.answers = {};
+        state.answers[q.id] = e.target.value;
+        saveCurrentState();
+      });
+    }
+  });
+
+  // ==========================================
+  // 8. ACCIONES DE COPIADO E IMPRESIÓN
+  // ==========================================
+  function copyFullReport() {
+    const cData = CASES_DATA[state.assignedCaseId] || CASES_DATA[1];
+
+    let textToCopy = `==========================================================\n`;
+    textToCopy += `CAPACITACIÓN INSTITUCIONAL: EDUCACIÓN FINANCIERA Y APUESTAS ONLINE\n`;
+    textToCopy += `Policía de la Provincia de Córdoba\n`;
+    textToCopy += `==========================================================\n\n`;
+
+    textToCopy += `CASO ANALIZADO: ${cData.number} — ${cData.title}\n`;
+    textToCopy += `Subtítulo: ${cData.subtitle}\n\n`;
+
+    textToCopy += `RELATO DE LA SITUACIÓN:\n`;
+    cData.paragraphs.forEach(p => {
+      textToCopy += `${p}\n\n`;
+    });
+
+    textToCopy += `----------------------------------------------------------\n`;
+    textToCopy += `RESPUESTAS Y ANÁLISIS DEL EQUIPO DE TRABAJO:\n`;
+    textToCopy += `----------------------------------------------------------\n\n`;
+
+    QUESTIONS_DATA.forEach(q => {
+      const ans = (state.answers && state.answers[q.id]) ? state.answers[q.id].trim() : '— Sin respuesta';
+      textToCopy += `${q.number.toUpperCase()}: ${q.title}\n`;
+      textToCopy += `Consigna: ${q.prompt}\n`;
+      textToCopy += `Respuesta del equipo:\n${ans}\n\n`;
+    });
+
+    textToCopy += `----------------------------------------------------------\n`;
+    textToCopy += `CRITERIO RECTOR:\n`;
+    textToCopy += `“Si hago esto hoy, ¿qué posibilidades me abre o me cierra mañana?”\n`;
+    textToCopy += `==========================================================\n`;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        showCopyFeedback();
+      }).catch(err => {
+        fallbackCopyText(textToCopy);
+      });
+    } else {
+      fallbackCopyText(textToCopy);
+    }
+  }
+
+  function fallbackCopyText(text) {
+    const tempTextArea = document.createElement('textarea');
+    tempTextArea.value = text;
+    tempTextArea.style.position = 'fixed';
+    tempTextArea.style.left = '-9999px';
+    document.body.appendChild(tempTextArea);
+    tempTextArea.focus();
+    tempTextArea.select();
+    try {
+      document.execCommand('copy');
+      showCopyFeedback();
+    } catch (e) {
+      alert('Por favor copie el texto manualmente desde la pantalla.');
+    }
+    document.body.removeChild(tempTextArea);
+  }
+
+  function showCopyFeedback() {
+    if (!btnCopyReportText) return;
+    const originalText = btnCopyReportText.textContent;
+    btnCopyReportText.textContent = '¡Informe copiado al portapapeles!';
+    btnCopyReport.classList.add('btn-copied-success');
+    setTimeout(() => {
+      btnCopyReportText.textContent = originalText;
+      btnCopyReport.classList.remove('btn-copied-success');
+    }, 2800);
+  }
+
+  if (btnCopyReport) {
+    btnCopyReport.addEventListener('click', copyFullReport);
+  }
+
+  if (btnPrintReport) {
+    btnPrintReport.addEventListener('click', () => {
+      window.print();
+    });
+  }
+
+  if (btnEditAnswers) {
+    btnEditAnswers.addEventListener('click', () => {
+      goToScreen(3);
+    });
+  }
+
+  // ==========================================
+  // 9. EVENT LISTENERS DE FLUJO Y NAVEGACIÓN
+  // ==========================================
+  // Pantalla 1
+  if (btnStartWorkshop) {
+    btnStartWorkshop.addEventListener('click', () => {
+      startTimer();
+      goToScreen(2);
+    });
+  }
+
+  // Pantalla 2: Selección de caso
+  caseSelectCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.btn-select-case')) return;
+      const caseId = parseInt(card.dataset.selectCase, 10);
+      selectCase(caseId);
+    });
+  });
+
+  btnSelectCaseList.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const caseId = parseInt(btn.dataset.selectCase, 10);
+      selectCase(caseId);
+    });
+  });
+
+  if (btnBackToStart) {
+    btnBackToStart.addEventListener('click', () => {
+      goToScreen(1);
+    });
+  }
+
+  // Pantalla 3: Resolución
+  if (btnChangeCase) {
+    btnChangeCase.addEventListener('click', () => {
+      goToScreen(2);
+    });
+  }
+
+  if (btnBackToCaseSelect) {
+    btnBackToCaseSelect.addEventListener('click', () => {
+      goToScreen(2);
+    });
+  }
+
+  if (btnSubmitResolution) {
+    btnSubmitResolution.addEventListener('click', () => {
       saveCurrentState();
+      goToScreen(4);
     });
-  });
+  }
 
   // ==========================================
-  // 7. EVENT LISTENERS Y BOTONES DE FLUJO
-  // ==========================================
-  btnStartWorkshop.addEventListener('click', () => {
-    startTimer();
-    goToScreen(2);
-  });
-
-  btnAssignCase.addEventListener('click', () => {
-    assignRandomCase();
-  });
-
-  // Delegación de navegación "Volver" y "Siguiente" en los botones de pantallas
-  document.querySelectorAll('[data-action="next"]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (state.currentScreen === 3 && !state.assignedCaseId) {
-        assignRandomCase();
-        return;
-      }
-      goToScreen(state.currentScreen + 1);
-    });
-  });
-
-  document.querySelectorAll('[data-action="prev"]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      goToScreen(state.currentScreen - 1);
-    });
-  });
-
-  btnFinalizeWorkshop.addEventListener('click', () => {
-    showSummaryDrawer();
-  });
-
-  btnPrintSummary.addEventListener('click', () => {
-    window.print();
-  });
-
-  // ==========================================
-  // 8. MODAL DE PISTAS (PREGUNTAS ORIENTADORAS)
+  // 10. MODAL DE PISTAS (PREGUNTAS ORIENTADORAS)
   // ==========================================
   let lastClueIndex = -1;
 
@@ -577,42 +619,50 @@ document.addEventListener('DOMContentLoaded', () => {
     } while (newIndex === lastClueIndex && CLUES_LIST.length > 1);
 
     lastClueIndex = newIndex;
-    clueQuestionText.textContent = `“${CLUES_LIST[newIndex]}”`;
+    if (clueQuestionText) {
+      clueQuestionText.textContent = `“${CLUES_LIST[newIndex]}”`;
+    }
   }
 
-  btnOpenClue.addEventListener('click', () => {
-    showRandomClue();
-    modalClue.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  });
+  if (btnOpenClue) {
+    btnOpenClue.addEventListener('click', () => {
+      showRandomClue();
+      if (modalClue) modalClue.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+  }
 
-  btnNextClue.addEventListener('click', () => {
-    showRandomClue();
-  });
+  if (btnNextClue) {
+    btnNextClue.addEventListener('click', () => {
+      showRandomClue();
+    });
+  }
 
   function closeClueModal() {
-    modalClue.style.display = 'none';
+    if (modalClue) modalClue.style.display = 'none';
     document.body.style.overflow = '';
   }
 
-  btnCloseClue.addEventListener('click', closeClueModal);
-  btnDismissClue.addEventListener('click', closeClueModal);
+  if (btnCloseClue) btnCloseClue.addEventListener('click', closeClueModal);
+  if (btnDismissClue) btnDismissClue.addEventListener('click', closeClueModal);
 
   // ==========================================
-  // 9. MODAL DE CONCEPTOS PARA RECORDAR
+  // 11. MODAL DE CONCEPTOS PARA RECORDAR
   // ==========================================
-  btnOpenConcepts.addEventListener('click', () => {
-    modalConcepts.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  });
+  if (btnOpenConcepts) {
+    btnOpenConcepts.addEventListener('click', () => {
+      if (modalConcepts) modalConcepts.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+  }
 
   function closeConceptsModal() {
-    modalConcepts.style.display = 'none';
+    if (modalConcepts) modalConcepts.style.display = 'none';
     document.body.style.overflow = '';
   }
 
-  btnCloseConcepts.addEventListener('click', closeConceptsModal);
-  btnDismissConcepts.addEventListener('click', closeConceptsModal);
+  if (btnCloseConcepts) btnCloseConcepts.addEventListener('click', closeConceptsModal);
+  if (btnDismissConcepts) btnDismissConcepts.addEventListener('click', closeConceptsModal);
 
   // Filtros temáticos del Marco Teórico
   const theoryTabBtns = document.querySelectorAll('.theory-tab-btn');
@@ -641,56 +691,60 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
-  // 10. REINICIO DE LA ACTIVIDAD
+  // 12. REINICIO DE LA ACTIVIDAD
   // ==========================================
-  btnResetActivity.addEventListener('click', () => {
-    modalResetConfirm.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  });
+  if (btnResetActivity) {
+    btnResetActivity.addEventListener('click', () => {
+      if (modalResetConfirm) modalResetConfirm.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+  }
 
   function closeResetModal() {
-    modalResetConfirm.style.display = 'none';
+    if (modalResetConfirm) modalResetConfirm.style.display = 'none';
     document.body.style.overflow = '';
   }
 
-  btnCancelReset.addEventListener('click', closeResetModal);
-  btnAbortReset.addEventListener('click', closeResetModal);
+  if (btnCancelReset) btnCancelReset.addEventListener('click', closeResetModal);
+  if (btnAbortReset) btnAbortReset.addEventListener('click', closeResetModal);
 
-  btnConfirmReset.addEventListener('click', () => {
-    // Limpiar localStorage
-    localStorage.removeItem(STORAGE_KEY);
+  if (btnConfirmReset) {
+    btnConfirmReset.addEventListener('click', () => {
+      localStorage.removeItem(STORAGE_KEY);
 
-    // Reiniciar temporizador
-    if (timerInterval) {
-      clearInterval(timerInterval);
-      timerInterval = null;
-    }
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
 
-    // Resetear variables en memoria
-    state = {
-      currentScreen: 1,
-      assignedCaseId: null,
-      timerStarted: false,
-      timerStartTimestamp: null,
-      timerElapsedSeconds: 0,
-      answers: {},
-      finishedWorkshop: false
-    };
+      state = {
+        currentScreen: 1,
+        assignedCaseId: null,
+        timerStarted: false,
+        timerStartTimestamp: null,
+        answers: {
+          answer_q1: '',
+          answer_q2: '',
+          answer_q3: '',
+          answer_q4: '',
+          answer_q5: ''
+        }
+      };
 
-    // Resetear formulario
-    formInputs.forEach(input => {
-      input.value = '';
+      QUESTIONS_DATA.forEach(q => {
+        const el = document.getElementById(q.id);
+        if (el) el.value = '';
+      });
+
+      closeResetModal();
+
+      if (timerWrapper) timerWrapper.style.display = 'none';
+      if (timerProgressBar) timerProgressBar.style.width = '0%';
+      if (timerClock) timerClock.textContent = '30:00';
+
+      goToScreen(1);
     });
-
-    closeResetModal();
-    timerWrapper.style.display = 'none';
-    timerProgressBar.style.width = '0%';
-    timerClock.textContent = '30:00';
-    closureActionsArea.style.display = 'flex';
-    teamSummaryDrawer.style.display = 'none';
-
-    goToScreen(1);
-  });
+  }
 
   // Cerrar modales con tecla Escape y clic en backdrop
   window.addEventListener('keydown', (e) => {
@@ -703,17 +757,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   [modalClue, modalConcepts, modalResetConfirm].forEach(backdrop => {
-    backdrop.addEventListener('click', (e) => {
-      if (e.target === backdrop) {
-        closeClueModal();
-        closeConceptsModal();
-        closeResetModal();
-      }
-    });
+    if (backdrop) {
+      backdrop.addEventListener('click', (e) => {
+        if (e.target === backdrop) {
+          closeClueModal();
+          closeConceptsModal();
+          closeResetModal();
+        }
+      });
+    }
   });
 
   // ==========================================
-  // 11. VENTANAS MODALES DE RECURSOS (POR NECESIDAD)
+  // 13. VENTANAS MODALES DE RECURSOS (POR NECESIDAD)
   // ==========================================
   const resourceModals = document.querySelectorAll('.modal-resource-backdrop');
 
@@ -734,7 +790,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  // Apertura de modales desde los 6 botones de la cuadrícula
   document.querySelectorAll('[data-open-modal]').forEach(btn => {
     btn.addEventListener('click', () => {
       const targetId = btn.getAttribute('data-open-modal');
@@ -744,7 +799,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Cierre desde botones con [data-close-modal] dentro de los modales de recursos
   document.querySelectorAll('.modal-resource-backdrop [data-close-modal]').forEach(btn => {
     btn.addEventListener('click', () => {
       const parentModal = btn.closest('.modal-resource-backdrop');
@@ -758,7 +812,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Cierre al hacer clic en el backdrop
   resourceModals.forEach(backdrop => {
     backdrop.addEventListener('click', (e) => {
       if (e.target === backdrop) {
@@ -772,7 +825,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
-  // 12. INICIALIZACIÓN GENERAL
+  // 14. INICIALIZACIÓN GENERAL
   // ==========================================
   restoreFormAnswers();
 
@@ -780,7 +833,6 @@ document.addEventListener('DOMContentLoaded', () => {
     startTimer();
   }
 
-  // Cargar en la pantalla guardada o en la pantalla 1
   goToScreen(state.currentScreen || 1);
 
 });
