@@ -450,6 +450,12 @@ body {
   }
 }
 
+.title-workshop {
+  margin-top: 1.75rem;
+  margin-bottom: 1.15rem;
+  text-transform: uppercase;
+}
+
 .subtitle-primary {
   font-size: 1.0625rem;
   font-weight: 700;
