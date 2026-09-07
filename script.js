@@ -649,17 +649,39 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   // 11. MODAL DE CONCEPTOS PARA RECORDAR
   // ==========================================
-  if (btnOpenConcepts) {
-    btnOpenConcepts.addEventListener('click', () => {
-      if (modalConcepts) modalConcepts.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    });
+  function openConceptsModal(filterCategory = 'all') {
+    if (!modalConcepts) return;
+    modalConcepts.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    // Disparar click en la pestaña adecuada
+    const targetTab = modalConcepts.querySelector(`.theory-tab-btn[data-theory-filter="${filterCategory}"]`) 
+      || modalConcepts.querySelector('.theory-tab-btn[data-theory-filter="all"]');
+    if (targetTab) {
+      targetTab.click();
+    }
+    const modalBody = modalConcepts.querySelector('.modal-body');
+    if (modalBody) modalBody.scrollTop = 0;
   }
 
   function closeConceptsModal() {
     if (modalConcepts) modalConcepts.style.display = 'none';
     document.body.style.overflow = '';
   }
+
+  if (btnOpenConcepts) {
+    btnOpenConcepts.addEventListener('click', () => openConceptsModal('all'));
+  }
+
+  // Disparadores de apertura del modal teórico
+  const openTheoryTriggers = document.querySelectorAll('[data-open-theory]');
+  openTheoryTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const filter = trigger.getAttribute('data-open-theory') || 'all';
+      openConceptsModal(filter);
+    });
+  });
 
   if (btnCloseConcepts) btnCloseConcepts.addEventListener('click', closeConceptsModal);
   if (btnDismissConcepts) btnDismissConcepts.addEventListener('click', closeConceptsModal);
@@ -687,6 +709,9 @@ document.addEventListener('DOMContentLoaded', () => {
           card.classList.add('is-hidden');
         }
       });
+
+      const modalBody = modalConcepts ? modalConcepts.querySelector('.modal-body') : null;
+      if (modalBody) modalBody.scrollTop = 0;
     });
   });
 
